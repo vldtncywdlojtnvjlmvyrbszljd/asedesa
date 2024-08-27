@@ -149,10 +149,10 @@ function Update:Window(text,logo,keybind)
     Hub.Parent = Top
     Hub.BackgroundColor3 = Color3.fromRGB(255, 255, 255) --warna text atas
     Hub.BackgroundTransparency = 1.000
-    Hub.Position = UDim2.new(0, 85, 0, 0)
+    Hub.Position = UDim2.new(0, 100, 0, 0) --0, 85, 0, 0
     Hub.Size = UDim2.new(0, 81, 0, 27)
     Hub.Font = Enum.Font.GothamSemibold
-    Hub.Text = "             | BRUTALITY HUB V4" 
+    Hub.Text = "                               | BRUTALITY HUB V4 |" 
     Hub.TextColor3 = Color3.fromRGB(252, 239, 0)   --warna text atas
     Hub.TextSize = 20.000
     Hub.TextXAlignment = Enum.TextXAlignment.Left
@@ -282,13 +282,14 @@ local LogoHub = Instance.new("ImageLabel")
         TabButton.Parent = ScrollTab
         TabButton.Name = text.."Server"
         TabButton.Text = text
-        TabButton.BackgroundColor3 = Color3.fromRGB(184, 112, 6) --warna tab toggle kiri
+        TabButton.BackgroundColor3 = Color3.fromRGB(0, 0, 0) --warna tab toggle kiri 184, 112, 6
         TabButton.BackgroundTransparency = 0.150
         TabButton.Size = UDim2.new(0, 130, 0, 23)
         TabButton.Font = Enum.Font.GothamSemibold
         TabButton.TextColor3 = Color3.fromRGB(225, 225, 225)
         TabButton.TextSize = 15.000
         TabButton.TextTransparency = 0.500
+
 
         local UICorner = Instance.new("UICorner")
         UICorner.Parent = TabButton
@@ -385,7 +386,7 @@ local LogoHub = Instance.new("ImageLabel")
             
             Button.Name = "Button"
             Button.Parent = MainFramePage
-            Button.BackgroundColor3 = _G.Color
+            Button.BackgroundColor3 = _G.Color -- warna pinggiran tab kanan
             Button.Size = UDim2.new(0, 470, 0, 31)
             
             UICorner.CornerRadius = UDim.new(0, 5)
@@ -1174,6 +1175,35 @@ function function8()
 end
 
 function CheckAcientOneStatus()
+    if not game.Players.LocalPlayer.Character:FindFirstChild("RaceTransformed") then
+        return "You have yet to achieve greatness"
+    end
+    local v227 = nil
+    local v228 = nil
+    local v229 = nil
+    v229, v228, v227 = game.ReplicatedStorage.Remotes.CommF_:InvokeServer("UpgradeRace", "Check")
+    if v229 == 1 then
+        return "Required Train More"
+    elseif v229 == 2 or v229 == 4 or v229 == 7 then
+        return "Can Buy Gear With " .. v227 .. " Fragments"
+    elseif v229 == 3 then
+        return "Required Train More"
+    elseif v229 == 5 then
+        return "You Are Done Your Race."
+    elseif v229 == 6 then
+        return "Upgrades completed: " .. v228 - 2 .. "/3, Need Trains More"
+    end
+    if v229 ~= 8 then
+        if v229 == 0 then
+            return "Ready For Trial"
+        else
+            return "You have yet to achieve greatness"
+        end
+    end
+    return "Remaining " .. 10 - v228 .. " training sessions."
+end
+
+function CheckAcientOneStatusTrain()
     if not game.Players.LocalPlayer.Character:FindFirstChild("RaceTransformed") then
         return "You have yet to achieve greatness"
     end
@@ -3249,10 +3279,11 @@ spawn(function()
         while wait() do
             if _G.AutoAdvanceDungeon or _G.AutoDoughtBoss or _G.Auto_DungeonMobAura or _G.AutoFarmChest or _G.AutoFactory or _G.AutoFarmBossHallow or _G.AutoFarmSwanGlasses or _G.AutoLongSword or _G.AutoBlackSpikeycoat or _G.AutoElectricClaw or _G.AutoFarmGunMastery or _G.AutoHolyTorch or _G.AutoLawRaid or _G.AutoFarmBoss or _G.AutoTwinHooks or _G.AutoOpenSwanDoor or _G.AutoDragon_Trident or _G.AutoSaber or _G.AutoFarmFruitMastery or _G.AutoFarmGunMastery or _G.TeleportIsland or _G.Auto_EvoRace or _G.AutoFarmAllMsBypassType or _G.AutoObservationv2 or _G.AutoMusketeerHat or _G.AutoEctoplasm or _G.AutoRengoku or _G.Auto_Rainbow_Haki or _G.AutoObservation or _G.AutoDarkDagger or _G.Safe_Mode or _G.MasteryFruit or _G.AutoBudySword or _G.AutoOderSword or _G.AutoBounty or _G.AutoAllBoss or _G.Auto_Bounty or _G.AutoSharkman or _G.Auto_Mastery_Fruit or _G.Auto_Mastery_Gun or _G.Auto_Dungeon or _G.Auto_Cavender or _G.Auto_Pole or _G.Auto_Kill_Ply or _G.Auto_Factory or _G.AutoSecondSea or _G.TeleportPly or _G.AutoBartilo or _G.Auto_DarkBoss or _G.GrabChest or _G.AutoFarmBounty or _G.Holy_Torch or _G.AutoFarm or _G.Clip or FarmBoss or _G.AutoElitehunter or _G.AutoThirdSea or _G.Auto_Bone or _G.Autoheart or _G.Autodoughking or _G.AutoFarmMaterial or _G.AutoNevaSoulGuitar or _G.Auto_Dragon_Trident or _G.Autotushita or _G.d or _G.Autowaden or _G.Autogay or _G.Autopole or _G.Autosaw or _G.AutoObservationHakiV2 or _G.AutoFarmNearest or AutoFarmChest or _G.AutoCarvender or _G.AutoTwinHook or AutoMobAura or _G.Tweenfruit or _G.TeleportNPC or _G.Leather or _G.Auto_Wing or _G.Umm or _G.Makori_gay or Radioactive or Fish or Gunpowder or Dragon_Scale or Cocoafarm or Scrap or MiniHee or _G.AutoFarmSeabaest or Auto_Cursed_Dual_Katana or _G.AutoFarmMob or _G.AutoMysticIsland or _G.AutoFarmDungeon or _G.AutoRaidPirate or _G.AutoQuestRace or _G.TweenMGear or getgenv().AutoFarm or _G.AutoPlayerHunter or _G.AutoFactory or Grab_Chest or _G.Namfon or _G.AutoSwordMastery or _G.Auto_Seabest or _G.AutoSeaBest or _G.AutoKillTial or _G.Auto_Saber or _G.Position_Spawn or _G.Farmfast or _G.AutoRace or _G.RaidPirate or _G.AutoTushitaSword or Open_Color_Haki or _G.AutoTerrorshark or FarmShark or _G.farmpiranya or _G.Fish_Crew_Member or _G.DomadicAutoDriveBoat or _G.bjirFishBoat or _G.KillGhostShip == true then
                 if not game.Players.LocalPlayer.Character:FindFirstChild("Highlight") then
-                    local Highlight = Instance.new("Highlight")
-                    Highlight.FillColor = Color3.new(0, 255, 0)
-                    Highlight.OutlineColor = Color3.new(0,255,0)
-                    Highlight.Parent = game.Players.LocalPlayer.Character
+                       game.Players.LocalPlayer.Character:FindFirstChild('Highlight'):Destroy()
+                    --local Highlight = Instance.new("Highlight")
+                    --Highlight.FillColor = Color3.new(0, 0, 0, 0) --badan karakter
+                    --Highlight.OutlineColor = Color3.new(0, 0, 0, 0)
+                    --Highlight.Parent = game.Players.LocalPlayer.Character
                 end
             end
         end
@@ -3328,12 +3359,12 @@ end)
 print("Load Script")
 --akhiran fitur sc
 --Icon Tab
-local Library = Update:Window("                  PREMIUM","104397992902189",Enum.KeyCode.RightControl); --12523036534
+local Library = Update:Window("                  ","",Enum.KeyCode.RightControl); --12523036534
 
-local H = Library:AddTab("Home","6026568198")
+local H = Library:AddTab("Status","104397992902189")
 local Main = Library:AddTab("Level Farm","104397992902189")
 local M = Library:AddTab("All Quest","104397992902189")
-local ESX = Library:AddTab("ESP & Sea","104397992902189")
+local ESX = Library:AddTab("ESP & SEA","104397992902189")
 local RaceV4 = Library:AddTab("Trial V4","104397992902189")
 local P = Library:AddTab("Player","104397992902189")
 local R = Library:AddTab("Raid","104397992902189")
@@ -3696,7 +3727,7 @@ task.spawn(function()
     end)
     
 local ListF = {"Normal", "Not Tween To Npc Quest"}
-FarmMode = "Normal"
+FarmMode = "Not Tween To Npc Quest"
 Main:AddDropdown("Farm Mode", ListF,function(value)
     FarmMode = value
 end)
@@ -4734,7 +4765,7 @@ Main:AddToggle("Auto Farm Chest Hop",_G.AutoFarmChest_Hop,function(value)
  Main:AddSeperator("Dought Boss")
  
 local ListC = {"NoQuest", "AcceptQuest", "MasteryFruit"}
-CakeFMode = "Accept Quest"
+CakeFMode = "NoQuest"
 Main:AddDropdown("Select Cake Farm Mode", ListC,function(value)
  CakeFMode = value
 end)
@@ -7494,7 +7525,7 @@ M:AddSeperator("Misc Mastery")
      _G.AutoFarmGunMastery = value
      StopTween(_G.AutoFarmGunMastery)
  end)
- 
+
  spawn(function()
      pcall(function()
          while wait() do
@@ -7599,11 +7630,11 @@ end
              if _G.AutoSwordMastery then
                  local QuestTitle = game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Container.QuestTitle.Title.Text
                  if not string.find(QuestTitle, NameMon) then
-                     Magnet = false                                      
+                     Magnet = true --false                             
                      game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("AbandonQuest")
                  end
                  if game:GetService("Players").LocalPlayer.PlayerGui.Main.Quest.Visible == false then
-                     AutoSwordMasteryMag = false
+                     AutoSwordMasteryMag = false --false
                      CheckQuest()
                      TP1(CFrameQuest)
                      if (CFrameQuest.Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 10 then
@@ -9168,7 +9199,7 @@ M:AddToggle("Auto Drive Boat",_G.SailBoat,function(value)
  
  M:AddSeperator("Dark Dagger")
  
- M:AddToggle("Auto Kill Admin Boss",_G.AutoDarkDagger,function(value)
+ M:AddToggle("Auto Kill Rip Indra",_G.AutoDarkDagger,function(value)
      _G.AutoDarkDagger = value
      StopTween(_G.AutoDarkDagger)
  end)
@@ -11587,11 +11618,11 @@ RaceV4:AddButton("Teleport To Lever Pull",function()
 topos(CFrame.new(28575.181640625, 14936.6279296875, 72.31636810302734))
 end)
 
-RaceV4:AddButton("Teleport To Acient One (Must Be in Temple Of Time!)",function()
+RaceV4:AddButton("Teleport To Acient One",function()
 topos(CFrame.new(28981.552734375, 14888.4267578125, -120.245849609375))
 end)
 
-RaceV4:AddButton("Unlock Lever.", function()
+RaceV4:AddButton("Unlock Lever", function()
 venyx:Notify("Unlocked")
 if game:GetService("Workspace").Map["Temple of Time"].Lever.Prompt:FindFirstChild("ProximityPrompt") then
  game:GetService("Workspace").Map["Temple of Time"].Lever.Prompt:FindFirstChild("ProximityPrompt"):Remove()
@@ -11649,109 +11680,6 @@ RaceV4:AddButton("Clock Acces", function()
  game:GetService("Workspace").Map["Temple of Time"].ClockRoomExit:Remove()
 end)
 
-RaceV4:AddToggle("Auto Buy Gear",_G.Auto_Farm_Bone4,function(value)
-_G.Auto_Farm_Bone4 = value
-StopTween(_G.Auto_Farm_Bone4)
-end)
-spawn(function()
- pcall(function()
-     while wait(0.1) do
-         if _G.Auto_Farm_Bone4 then
- local args = {
- [1] = true
-}
-
-local args = {
- [1] = "UpgradeRace",
- [2] = "Buy"
-}
-
-game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer(unpack(args))
-         end
-end 
-end)  
-end)
-RaceV4:AddToggle("Auto Ancient One Quest [Train Race V4]",_G.AutoRace,function(value)
-_G.AutoRace = value
-StardFarm = value
-StopTween(_G.AutoRace)
-end)
-spawn(function()
-     pcall(function()
-         while wait() do
-             if _G.AutoRace then
-                 if game.Players.LocalPlayer.Character.RaceTransformed.Value == true then
-                     StardFarm = false
-                     topos(CFrame.new(216.211181640625, 126.9352035522461, -12599.0732421875))
-                 end
-             end
-         end
-     end)
- end)
- spawn(function()
-     while wait() do 
-         if StardFarm and World3 then
-             pcall(function()
-                 if game:GetService("Workspace").Enemies:FindFirstChild("Cocoa Warrior") or game:GetService("Workspace").Enemies:FindFirstChild("Chocolate Bar Battler") or game:GetService("Workspace").Enemies:FindFirstChild("Sweet Thief") or game:GetService("Workspace").Enemies:FindFirstChild("Candy Rebel") then
-                     for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
-                         if v.Name == "Cocoa Warrior" or v.Name == "Chocolate Bar Battler" or v.Name == "Sweet Thief" or v.Name == "Candy Rebel" then
-                            if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
-                                repeat task.wait()
-                                     AutoHaki()
-                                     EquipWeapon(_G.SelectWeapon)
-                                     v.HumanoidRootPart.CanCollide = false
-                                     v.Humanoid.WalkSpeed = 0
-                                     v.Head.CanCollide = false 
-                                     FarmMag = true
-                                     PosGG = v.HumanoidRootPart.CFrame
-                                     topos(v.HumanoidRootPart.CFrame * Pos)
-                                     game:GetService("VirtualUser"):CaptureController()
-                                     game:GetService("VirtualUser"):Button1Down(Vector2.new(1280,672))
-                                 until not StardFarm or not v.Parent or v.Humanoid.Health <= 0
-                             end
-                         end
-                     end
-                 else
-                     FarmMag = false
-                     topos(CFrame.new(216.211181640625, 126.9352035522461, -12599.0732421875))
-                     for i,v in pairs(game:GetService("ReplicatedStorage"):GetChildren()) do 
-                         if v.Name == "Cocoa Warrior" then
-                             topos(v.HumanoidRootPart.CFrame * CFrame.new(2,20,2))
-                         elseif v.Name == "Chocolate Bar Battler" then
-                             topos(v.HumanoidRootPart.CFrame * CFrame.new(2,20,2))
-                         elseif v.Name == "Sweet Thief" then
-                             topos(v.HumanoidRootPart.CFrame * CFrame.new(2,20,2))
-                         elseif v.Name == "Candy Rebel" then
-                             topos(v.HumanoidRootPart.CFrame * CFrame.new(2,20,2))
-                         end
-                     end
-                 end
-             end)
-         end
-     end
- end)
- spawn(function()
-     pcall(function()
-         while wait() do
-             if _G.AutoRace then
-                 if game.Players.LocalPlayer.Character.RaceTransformed.Value == false then
-                     StardFarm = true
-                 end
-             end
-         end
-     end)
- end)
-spawn(function()
- while wait() do
-     pcall(function()
-         if _G.AutoRace then
-             game:GetService("VirtualInputManager"):SendKeyEvent(true,"Y",false,game)
-             wait(0.1)
-             game:GetService("VirtualInputManager"):SendKeyEvent(false,"Y",false,game)
-         end
-     end)
- end
-end)
 RaceV4:AddToggle("Disabled Inf Stairs", nil, function(value)
  game.Players.LocalPlayer.Character.InfiniteStairs.Disabled = value
 end)
@@ -11780,6 +11708,113 @@ end)
 RaceV4:AddButton("Teleport Sky Door (Must Be in Temple Of Time!)",function()
 topos(CFrame.new(28967.408203125, 14918.0751953125, 234.31198120117188))
 end)
+
+RaceV4:AddSeperator("Auto Quest Train V4")
+
+local bPl = RaceV4:AddLabel("Ancient One Status : " .. tostring(CheckAcientOneStatusTrain()))
+RaceV4:AddToggle("Auto Buy Gear Train V4",_G.Auto_Farm_Bone4,function(value)
+    _G.Auto_Farm_Bone4 = value
+    StopTween(_G.Auto_Farm_Bone4)
+    end)
+    spawn(function()
+     pcall(function()
+         while wait(0.1) do
+             if _G.Auto_Farm_Bone4 then
+     local args = {
+     [1] = true
+    }
+    
+    local args = {
+     [1] = "UpgradeRace",
+     [2] = "Buy"
+    }
+    
+    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer(unpack(args))
+             end
+    end 
+    end)  
+    end)
+    RaceV4:AddToggle("Auto Ancient One Quest [Train Race V4]",_G.AutoRace,function(value)
+    _G.AutoRace = value
+    StardFarm = value
+    StopTween(_G.AutoRace)
+    end)
+    spawn(function()
+         pcall(function()
+             while wait() do
+                 if _G.AutoRace then
+                     if game.Players.LocalPlayer.Character.RaceTransformed.Value == true then
+                         StardFarm = false
+                         topos(CFrame.new(216.211181640625, 126.9352035522461, -12599.0732421875))
+                     end
+                 end
+             end
+         end)
+     end)
+     spawn(function()
+         while wait() do 
+             if StardFarm and World3 then
+                 pcall(function()
+                     if game:GetService("Workspace").Enemies:FindFirstChild("Cocoa Warrior") or game:GetService("Workspace").Enemies:FindFirstChild("Chocolate Bar Battler") or game:GetService("Workspace").Enemies:FindFirstChild("Sweet Thief") or game:GetService("Workspace").Enemies:FindFirstChild("Candy Rebel") then
+                         for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
+                             if v.Name == "Cocoa Warrior" or v.Name == "Chocolate Bar Battler" or v.Name == "Sweet Thief" or v.Name == "Candy Rebel" then
+                                if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
+                                    repeat task.wait()
+                                         AutoHaki()
+                                         EquipWeapon(_G.SelectWeapon)
+                                         v.HumanoidRootPart.CanCollide = false
+                                         v.Humanoid.WalkSpeed = 0
+                                         v.Head.CanCollide = false 
+                                         FarmMag = true
+                                         PosGG = v.HumanoidRootPart.CFrame
+                                         topos(v.HumanoidRootPart.CFrame * Pos)
+                                         game:GetService("VirtualUser"):CaptureController()
+                                         game:GetService("VirtualUser"):Button1Down(Vector2.new(1280,672))
+                                     until not StardFarm or not v.Parent or v.Humanoid.Health <= 0
+                                 end
+                             end
+                         end
+                     else
+                         FarmMag = false
+                         topos(CFrame.new(216.211181640625, 126.9352035522461, -12599.0732421875))
+                         for i,v in pairs(game:GetService("ReplicatedStorage"):GetChildren()) do 
+                             if v.Name == "Cocoa Warrior" then
+                                 topos(v.HumanoidRootPart.CFrame * CFrame.new(2,20,2))
+                             elseif v.Name == "Chocolate Bar Battler" then
+                                 topos(v.HumanoidRootPart.CFrame * CFrame.new(2,20,2))
+                             elseif v.Name == "Sweet Thief" then
+                                 topos(v.HumanoidRootPart.CFrame * CFrame.new(2,20,2))
+                             elseif v.Name == "Candy Rebel" then
+                                 topos(v.HumanoidRootPart.CFrame * CFrame.new(2,20,2))
+                             end
+                         end
+                     end
+                 end)
+             end
+         end
+     end)
+     spawn(function()
+         pcall(function()
+             while wait() do
+                 if _G.AutoRace then
+                     if game.Players.LocalPlayer.Character.RaceTransformed.Value == false then
+                         StardFarm = true
+                     end
+                 end
+             end
+         end)
+     end)
+    spawn(function()
+     while wait() do
+         pcall(function()
+             if _G.AutoRace then
+                 game:GetService("VirtualInputManager"):SendKeyEvent(true,"Y",false,game)
+                 wait(0.1)
+                 game:GetService("VirtualInputManager"):SendKeyEvent(false,"Y",false,game)
+             end
+         end)
+     end
+    end)
 
 RaceV4:AddSeperator("Auto Complete Trials")
 
@@ -11922,8 +11957,8 @@ RaceV4:AddButton("Auto Complete Angel Trial",function(t)
      RaceV4:AddButton("Auto Complete Cyborg Trial",function(t)
      topos(CFrame.new(0,300,0))
      end)
- end
- 
+    end
+
  spawn(function()
  while wait() do
      if _G.AutoKillTial then
@@ -11976,7 +12011,10 @@ RaceV4:AddButton("Auto Complete Angel Trial",function(t)
      end)
  end
  end)
- 
+ RaceV4:AddButton("Auto Complete Angel Trial",function(t)
+    topos(game.Workspace.Map.SkyTrial.Model.FinishPart.CFrame)
+    end)
+
  local plyserv = P:AddLabel("Total PLayers")
 
  
@@ -14037,11 +14075,11 @@ end)
  S:AddButton("Buy God Human [ $5,000 Fragments $5,000,000 Beli ]",function()
      game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyGodhuman")
  end)
- S:AddButton("Buy Sanguine Art | $5,000 Frag | $5,000,000  ",function()
+ S:AddButton("Buy Sanguine Art [ $5,000 Frag | $5,000,000 Beli ]  ",function()
      game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySanguineArt")
  end)
 
- S:AddButton("Buy DivineArt | $7,500 Frag | $7,500,000  ",function()
+ S:AddButton("Buy DivineArt [ $7,500 Frag | $7,500,000 Beli ] ",function()
      game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyDivineArt")
  end)
  -----Shop----------------
@@ -14218,6 +14256,13 @@ end)
      }
      game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
  end)
+ S:AddButton("Swordsman Hat [ 150k Beli ]",function()
+    local args = {
+        [1] = "BuyItem",
+        [2] = "Swordsman Hat"
+    }
+    game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+end)
  
  D:AddSeperator("Sniper")
  
@@ -14595,6 +14640,24 @@ spawn(function()
          end
      end
  end)
+
+ D:AddToggle("Bring All Fruit 75% Kick System",_G.BringFruitBF,function(value)
+    _G.BringFruitBF = value
+end)
+
+spawn(function()
+    while wait() do
+        if _G.BringFruitBF then
+            pcall(function()
+                for i,v in pairs(game.Workspace:GetChildren()) do
+                    if v:IsA("Tool") then
+                        v.Handle.CFrame = game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame
+                    end
+                end	
+            end)
+        end
+    end
+end)
 
 
  Ss:AddSeperator("Server") --AWALAN MISC DISINI
