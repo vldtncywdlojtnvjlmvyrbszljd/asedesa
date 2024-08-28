@@ -1,4 +1,4 @@
-spawn(function()
+--[[spawn(function()
     while wait() do
         for i,v in pairs(game.Players.LocalPlayer:GetChildren()) do
             if v.Name == "DataLoaded" or v.Name == "DataPreloaded" then
@@ -28,7 +28,12 @@ spawn(function()
     --require(game.ReplicatedStorage.Notification).new("<Color=Yellow>HAPPY AND FUN USE MY SCRIPT<Color=/>"):Display()
     require(game.ReplicatedStorage.Notification).new("<Color=Yellow>You Executor : <Color=/> ".. identifyexecutor()):Display()
     wait(.36)
-end)
+end)]]
+local NotificationLibrary = loadstring(game:HttpGet("https://raw.githubusercontent.com/lobox920/Notification-Library/Main/Library.lua"))()
+
+NotificationLibrary:SendNotification("Warning", "Script Loading ...", 10)
+NotificationLibrary:SendNotification("Warning", "YouTube: Medusa Script Roblox", 10)
+NotificationLibrary:SendNotification("Warning", "Executor: ".. identifyexecutor(), 10)
 loadstring(game:HttpGet("https://raw.githubusercontent.com/vldtncywdlojtnvjlmvyrbszljd/asedesa/main/GameList.lua", true))()
 for PlaceID, Execute in pairs(Games) do
     if PlaceID == game.PlaceId then
