@@ -208,7 +208,7 @@ game.Players.LocalPlayer.Character.Humanoid:UnequipTools()
 task.wait()
 end
 elseif GetAllItems == true then
-OrionLib:MakeNotification({Name = "Error",Content = "Match hasn't started yet.",Image = "rbxassetid://7733658504",Time = 5})
+OrionLib:MakeNotification({Name = "Error",Content = "Match hasn't started yet.",Image ="https://www.roblox.com/headshot-thumbnail/image?userId=".. LocalPlayer.UserId.."&width=420&height=420&format=png" ,Time = 5}) --"rbxassetid://7733658504"
 wait(0.05)
 GAI:Set(false)
 end
@@ -456,7 +456,7 @@ for i,v in pairs(game.Workspace.Map.CodeBrick.SurfaceGui:GetChildren()) do
                     end
                 end
 Code = first..second..third..fourth
-OrionLib:MakeNotification({Name = Code,Content = "",Image = "rbxassetid://7733919105",Time = 5})
+OrionLib:MakeNotification({Name = Code,Content = "",Image ="https://www.roblox.com/headshot-thumbnail/image?userId=".. LocalPlayer.UserId.."&width=420&height=420&format=png",Time = 5}) --
                     end    
                 })
 
@@ -1485,7 +1485,7 @@ wait(3.75)
 end
 end
 else
-OrionLib:MakeNotification({Name = "Error",Content = "You need 5000+ slaps.",Image = "rbxassetid://7733658504",Time = 5})
+OrionLib:MakeNotification({Name = "Error",Content = "You need 5000+ slaps.",Image = "https://www.roblox.com/headshot-thumbnail/image?userId=".. LocalPlayer.UserId.."&width=420&height=420&format=png",Time = 5}) --"rbxassetid://7733658504"
             end
 end
                     })
@@ -2456,7 +2456,7 @@ for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
                 end 
 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game.workspace.Origo.CFrame * CFrame.new(0,-5,0)
 else
-OrionLib:MakeNotification({Name = "Error",Content = "You need 666+ slaps.",Image = "rbxassetid://7733658504",Time = 5})
+OrionLib:MakeNotification({Name = "Error",Content = "You need 666+ slaps.",Image = "https://www.roblox.com/headshot-thumbnail/image?userId=".. LocalPlayer.UserId.."&width=420&height=420&format=png",Time = 5}) --"rbxassetid://7733658504"
 end
 end
 	end    
@@ -2849,7 +2849,7 @@ if game.Players.LocalPlayer.Character:FindFirstChildWhichIsA("Part",true) == nil
 game:GetService("ReplicatedStorage"):WaitForChild("HumanoidDied"):FireServer(game.Players.LocalPlayer.Character,false)
 end
 else
-OrionLib:MakeNotification({Name = "Error",Content = "You don't have Swapper equipped, or you aren't in the arena.",Image = "rbxassetid://7733658504",Time = 5})
+OrionLib:MakeNotification({Name = "Error",Content = "You don't have Swapper equipped, or you aren't in the arena.",Image = "https://www.roblox.com/headshot-thumbnail/image?userId=".. LocalPlayer.UserId.."&width=420&height=420&format=png",Time = 5}) --"rbxassetid://7733658504"
 end
 	end	  
 })
@@ -2886,7 +2886,7 @@ for i,v in pairs(game.Workspace.Lobby.brazil:GetChildren()) do
                         v.CanTouch = true
                 end
 else
-OrionLib:MakeNotification({Name = "Error",Content = "You don't have Za Hando equipped.",Image = "rbxassetid://7733658504",Time = 5})
+OrionLib:MakeNotification({Name = "Error",Content = "You don't have Za Hando equipped.",Image = "https://www.roblox.com/headshot-thumbnail/image?userId=".. LocalPlayer.UserId.."&width=420&height=420&format=png",Time = 5}) --"rbxassetid://7733658504"
 end
                     end    
                 })
@@ -3003,7 +3003,7 @@ fireclickdetector(workspace.Lobby.Ghost.ClickDetector)
 game.ReplicatedStorage.Ghostinvisibilityactivated:FireServer()
 fireclickdetector(workspace.Lobby[OGlove].ClickDetector)
 else
-OrionLib:MakeNotification({Name = "Error",Content = "You need to be in lobby and have 666+ slaps.",Image = "rbxassetid://7733658504",Time = 5})
+OrionLib:MakeNotification({Name = "Error",Content = "You need to be in lobby and have 666+ slaps.",Image = "https://www.roblox.com/headshot-thumbnail/image?userId=".. LocalPlayer.UserId.."&width=420&height=420&format=png",Time = 5}) --"rbxassetid://7733658504"
 end
                     end    
                 })
@@ -3051,7 +3051,7 @@ end
 task.wait()
                        end
 elseif ReplicaBallerFarm == true then
-OrionLib:MakeNotification({Name = "Error",Content = "You don't have Baller equipped.",Image = "rbxassetid://7733658504",Time = 5})
+OrionLib:MakeNotification({Name = "Error",Content = "You don't have Baller equipped.",Image = "https://www.roblox.com/headshot-thumbnail/image?userId=".. LocalPlayer.UserId.."&width=420&height=420&format=png",Time = 5}) --"rbxassetid://7733658504"
 wait(0.05)
 RBSF:Set(false)
 end
@@ -3102,7 +3102,7 @@ game.ReplicatedStorage.b:FireServer(v:WaitForChild("HumanoidRootPart"))
 task.wait()
                        end
 elseif ReplicaFarm == true then
-OrionLib:MakeNotification({Name = "Error",Content = "You don't have Replica equipped, or you aren't in the Default arena.",Image = "rbxassetid://7733658504",Time = 5})
+OrionLib:MakeNotification({Name = "Error",Content = "You don't have Replica equipped, or you aren't in the Default arena.",Image = "https://www.roblox.com/headshot-thumbnail/image?userId=".. LocalPlayer.UserId.."&width=420&height=420&format=png",Time = 5})--"rbxassetid://7733658504"
 wait(0.05)
 RSF:Set(false)
 end
@@ -3123,7 +3123,7 @@ Tab4:AddTextbox({
 if game.Players.LocalPlayer.Character:FindFirstChild("entered") == nil then
 		fireclickdetector(workspace.Lobby[Value].ClickDetector)
 else
-OrionLib:MakeNotification({Name = "Error",Content = "You aren't in the lobby.",Image = "rbxassetid://7733658504",Time = 5})
+OrionLib:MakeNotification({Name = "Error",Content = "You aren't in the lobby.",Image = "https://www.roblox.com/headshot-thumbnail/image?userId=".. LocalPlayer.UserId.."&width=420&height=420&format=png",Time = 5}) --"rbxassetid://7733658504"
 end
 	end	  
 })
@@ -3206,7 +3206,7 @@ game.ReplicatedStorage.GeneralAbility:FireServer(game.Players[GodmodePlayer])
 task.wait()
 end
 elseif GiveGodmode == true then
-OrionLib:MakeNotification({Name = "Error",Content = "You don't have Guardian Angel equipped.",Image = "rbxassetid://7733658504",Time = 5})
+OrionLib:MakeNotification({Name = "Error",Content = "You don't have Guardian Angel equipped.",Image = "https://www.roblox.com/headshot-thumbnail/image?userId=".. LocalPlayer.UserId.."&width=420&height=420&format=png",Time = 5}) --"rbxassetid://7733658504"
 wait(0.05)
 GG:Set(false)
 end
@@ -3248,7 +3248,7 @@ game.ReplicatedStorage.AlchemistEvent:FireServer("AddItem","Blue Crystal")
 task.wait()
 end
 elseif AlchemistIngredients == true then
-OrionLib:MakeNotification({Name = "Error",Content = "You don't have Alchemist equipped.",Image = "rbxassetid://7733658504",Time = 5})
+OrionLib:MakeNotification({Name = "Error",Content = "You don't have Alchemist equipped.",Image = "https://www.roblox.com/headshot-thumbnail/image?userId=".. LocalPlayer.UserId.."&width=420&height=420&format=png",Time = 5}) --"rbxassetid://7733658504"
 task.wait()
 GAAI:Set(false)
 end
@@ -3268,7 +3268,7 @@ game.Players.LocalPlayer.Character.Rhythm:Activate()
 task.wait()
 end
 elseif RhythmNoteSpam == true then
-OrionLib:MakeNotification({Name = "Error",Content = "You don't have Rhythm equipped.",Image = "rbxassetid://7733658504",Time = 5})
+OrionLib:MakeNotification({Name = "Error",Content = "You don't have Rhythm equipped.",Image = "https://www.roblox.com/headshot-thumbnail/image?userId=".. LocalPlayer.UserId.."&width=420&height=420&format=png",Time = 5}) --"rbxassetid://7733658504"
 wait(0.05)
 RNS:Set(false)
 end
@@ -3688,7 +3688,7 @@ wait(3.75)
 end
 end
 else
-OrionLib:MakeNotification({Name = "Error",Content = "You need 5000+ slaps.",Image = "rbxassetid://7733658504",Time = 5})
+OrionLib:MakeNotification({Name = "Error",Content = "You need 5000+ slaps.",Image = "https://www.roblox.com/headshot-thumbnail/image?userId=".. LocalPlayer.UserId.."&width=420&height=420&format=png",Time = 5}) --"rbxassetid://7733658504"
             end
 end
                     })
@@ -3715,7 +3715,7 @@ game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = OGL
 wait(9.9)
 until game.Players.LocalPlayer.Character:FindFirstChild("EMPStunBadgeCounter") and game.Players.LocalPlayer.Character.EMPStunBadgeCounter.Value >= 50
 else
-OrionLib:MakeNotification({Name = "Error",Content = "You don't have Stun equipped.",Image = "rbxassetid://7733658504",Time = 5})
+OrionLib:MakeNotification({Name = "Error",Content = "You don't have Stun equipped.",Image = "https://www.roblox.com/headshot-thumbnail/image?userId=".. LocalPlayer.UserId.."&width=420&height=420&format=png",Time = 5}) --"rbxassetid://7733658504"
 end
 end
                     })
@@ -3775,7 +3775,7 @@ game:GetService('VirtualInputManager'):SendKeyEvent(true,'E',false,x)
 wait(Random.new():NextNumber(1.5,1.75))
 end
 else
-OrionLib:MakeNotification({Name = "Error",Content = "You don't have Brick equipped.",Image = "rbxassetid://7733658504",Time = 5})
+OrionLib:MakeNotification({Name = "Error",Content = "You don't have Brick equipped.",Image = "https://www.roblox.com/headshot-thumbnail/image?userId=".. LocalPlayer.UserId.."&width=420&height=420&format=png",Time = 5}) --"rbxassetid://7733658504"
 end
                     end    
                 })
@@ -3791,7 +3791,7 @@ game:GetService('VirtualInputManager'):SendKeyEvent(true,'E',false,x)
 task.wait(5.05)
 end
 elseif Value == true then
-OrionLib:MakeNotification({Name = "Error",Content = "You don't have Brick equipped.",Image = "rbxassetid://7733658504",Time = 5})
+OrionLib:MakeNotification({Name = "Error",Content = "You don't have Brick equipped.",Image = "https://www.roblox.com/headshot-thumbnail/image?userId=".. LocalPlayer.UserId.."&width=420&height=420&format=png",Time = 5}) --"rbxassetid://7733658504"
 wait(0.05)
 BF:Set(false)
 end
@@ -3813,7 +3813,7 @@ game:GetService("ReplicatedStorage"):WaitForChild("HumanoidDied"):FireServer(gam
 wait(3.5)
 end
 elseif Value == true then
-OrionLib:MakeNotification({Name = "Error",Content = "You don't have Replica equipped.",Image = "rbxassetid://7733658504",Time = 5})
+OrionLib:MakeNotification({Name = "Error",Content = "You don't have Replica equipped.",Image = "https://www.roblox.com/headshot-thumbnail/image?userId=".. LocalPlayer.UserId.."&width=420&height=420&format=png",Time = 5}) --"rbxassetid://7733658504"
 wait(0.05)
 BOB:Set(false)
 end
