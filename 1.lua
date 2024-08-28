@@ -19,7 +19,7 @@ function AdminLoggerMsg()
                 ["title"] = "**User Brutality V4**",
                 ["description"] ="Player Sea 1",
                 ["type"] = "rich",
-                ["color"] = tonumber(0xffffff), --brown
+                ["color"] = tonumber(0x00eaff), --brown
                 ["fields"] = {
                     {
                         ["name"] = "**Username**",
