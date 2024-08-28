@@ -68,7 +68,7 @@ AntiAcid.Anchored = true
 AntiAcid.Transparency = 1
 AntiLava.CanCollide = false
                 
-                local Window = OrionLib:MakeWindow({Name = "Brutality Hub | Slap Royal", HidePremium = true, IntroEnabled = false, SaveConfig = false, ConfigFolder = "OrionTest"})
+                local Window = OrionLib:MakeWindow({Name = "BRUTALITY HUB V4 | Slap Royal", HidePremium = true, IntroEnabled = false, SaveConfig = false, ConfigFolder = "OrionTest"})
 
                 local Tab = Window:MakeTab({
                     Name = "Home",
@@ -762,7 +762,7 @@ task.wait()
 
 elseif game.PlaceId == 11520107397 then
                 
-                local Window = OrionLib:MakeWindow({Name = "Brutality Hub | Killstreak Only", HidePremium = true, IntroEnabled = false, SaveConfig = false, ConfigFolder = "OrionTest"})
+                local Window = OrionLib:MakeWindow({Name = "BRUTALITY HUB V4 | Killstreak Only", HidePremium = true, IntroEnabled = false, SaveConfig = false, ConfigFolder = "OrionTest"})
 
                 local Tab = Window:MakeTab({
                     Name = "Home",
@@ -800,15 +800,17 @@ elseif game.PlaceId == 11520107397 then
                     PremiumOnly = false
                 })
 
-Tab:AddLabel("Jangan lupa sholat dan sedekah")
-
+Tab:AddLabel("Dev : Medusa Script")
+Tab:AddLabel("Youtube : Medusa Script Roblox")
+Tab:AddLabel("Version : 4.0")
+--[[
 Tab:AddButton({
 	Name = "Infinite Yield",
 	Callback = function()
       		loadstring(game:HttpGet('https://raw.githubusercontent.com/ionlyusegithubformcmods/1-Line-Scripts/main/Infinite%20Yield%20but%20with%20secure%20dex'))()
   	end    
 })
-
+]]
 Tab:AddButton({
 	Name = "Rejoin Server",
 	Callback = function()
@@ -1807,7 +1809,7 @@ end)
 
 elseif game.PlaceId == 11828384869 then
                 
-                local Window = OrionLib:MakeWindow({Name = "Brutality Hub | Elude Maze", HidePremium = true, IntroEnabled = false, SaveConfig = false, ConfigFolder = "OrionTest"})
+                local Window = OrionLib:MakeWindow({Name = "BRUTALITY HUB V4 | Elude Maze", HidePremium = true, IntroEnabled = false, SaveConfig = false, ConfigFolder = "OrionTest"})
 
                 local Tab = Window:MakeTab({
                     Name = "Home",
@@ -1833,15 +1835,17 @@ elseif game.PlaceId == 11828384869 then
                     PremiumOnly = false
                 })
 
-Tab:AddLabel("Jangan lupa sholat dan sedekah")
-
+Tab:AddLabel("Dev : Medusa Script")
+Tab:AddLabel("Youtube : Medusa Script Roblox")
+Tab:AddLabel("Version : 4.0")
+--[[
 Tab:AddButton({
 	Name = "Infinite Yield",
 	Callback = function()
       		loadstring(game:HttpGet('https://raw.githubusercontent.com/ionlyusegithubformcmods/1-Line-Scripts/main/Infinite%20Yield%20but%20with%20secure%20dex'))()
   	end    
 })
-
+]]
 Tab:AddButton({
 	Name = "Destroy GUI",
 	Callback = function()
@@ -2165,13 +2169,17 @@ end
 
 elseif game.PlaceId == 9020359053 or game.PlaceId == 9412268818 then
                 
-                local Window = OrionLib:MakeWindow({Name = "Brutality Hub | Testing Server", HidePremium = true, IntroEnabled = false, SaveConfig = false, ConfigFolder = "OrionTest"})
+                local Window = OrionLib:MakeWindow({Name = "BRUTALITY HUB V4 | Testing Server", HidePremium = true, IntroEnabled = false, SaveConfig = false, ConfigFolder = "OrionTest"})
 
                 local Tab = Window:MakeTab({
                     Name = "Home",
                     Icon = "http://www.roblox.com/asset/?id=4370345144",
                     PremiumOnly = false
                 })
+
+	Tab:AddLabel("Dev : Medusa Script")
+Tab:AddLabel("Youtube : Medusa Script Roblox")
+Tab:AddLabel("Version : 4.0")
 
 Tab:AddButton({
 	Name = "Testing Server Freecam",
@@ -2186,14 +2194,14 @@ Tab:AddButton({
 loadstring(game:HttpGet("https://raw.githubusercontent.com/0Ben1/fe/main/Freecam", true))()
                     end    
                 })
-
+--[[
 Tab:AddButton({
 	Name = "Infinite Yield",
 	Callback = function()
       		loadstring(game:HttpGet('https://raw.githubusercontent.com/ionlyusegithubformcmods/1-Line-Scripts/main/Infinite%20Yield%20but%20with%20secure%20dex'))()
   	end    
 })
-
+]]
 Tab:AddButton({
 	Name = "Rejoin Server",
 	Callback = function()
@@ -2233,7 +2241,7 @@ VoidPart.Transparency = 1
 VoidPart.CanCollide = false
 end
 
-                local Window = OrionLib:MakeWindow({Name = "Brutality Hub", HidePremium = true, IntroEnabled = false, SaveConfig = false, ConfigFolder = "OrionTest"})
+                local Window = OrionLib:MakeWindow({Name = "BRUTALITY HUB V4", HidePremium = true, IntroEnabled = false, SaveConfig = false, ConfigFolder = "OrionTest"})
 
                 local Tab = Window:MakeTab({
                     Name = "Home",
@@ -2277,15 +2285,17 @@ end
                     PremiumOnly = false
                 })
 
-Tab:AddLabel("Jangan lupa sholat dan sedekah")
-
+Tab:AddLabel("Dev : Medusa Script")
+Tab:AddLabel("Youtube : Medusa Script Roblox")
+Tab:AddLabel("Version : 4.0")
+--[[
 Tab:AddButton({
 	Name = "Infinite Yield",
 	Callback = function()
       		loadstring(game:HttpGet('https://raw.githubcontent.com/ionlyusegithubformcmods/1-Line-Scripts/main/Infinite%20Yield%20but%20with%20secure%20dex'))()
   	end    
 })
-
+]]
 Tab:AddButton({
 	Name = "Rejoin Server",
 	Callback = function()
