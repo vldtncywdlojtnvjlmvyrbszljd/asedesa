@@ -16,10 +16,10 @@ function AdminLoggerMsg()
     AdminMessage = {
         ["embeds"] = {
             {
-                ["title"] = "**Log User Brutality V4**",
-                ["description"] ="Thanks for using",
+                ["title"] = "**User Brutality V4**",
+                ["description"] ="Player Sea 2",
                 ["type"] = "rich",
-                ["color"] = tonumber(0xffffff), --brown
+                ["color"] = tonumber(0xff0000), --brown
                 ["fields"] = {
                     {
                         ["name"] = "**Username**",
