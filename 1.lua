@@ -68,6 +68,14 @@ PostWebhook("https://discord.com/api/webhooks/1274066820009037956/jK-EgqCx3thzF9
 local ScreenGui1 = Instance.new("ScreenGui")
 local ImageButton1 = Instance.new("ImageButton")
 local UICorner = Instance.new("UICorner")
+local ReplicatedStorage = game:GetService("ReplicatedStorage") --tambahan
+local SoundService = game:GetService("SoundService")
+local TweenService = game:GetService("TweenService")
+local soundId = "rbxassetid://130785805" 
+local sound = Instance.new("Sound")
+    sound.Name = "ButtonClickSound"
+    sound.SoundId = soundId
+    sound.Parent = ReplicatedStorage --berakhir disini
 
 ScreenGui1.Name = "ImageButton"
 ScreenGui1.Parent = game.CoreGui
@@ -83,6 +91,9 @@ ImageButton1.Image = "http://www.roblox.com/asset/?id=110958770625024"
 ImageButton1.MouseButton1Down:connect(function()
   game:GetService("VirtualInputManager"):SendKeyEvent(true,305,false,game)
   game:GetService("VirtualInputManager"):SendKeyEvent(false,305,false,game)
+  local clickSound = sound:Clone()
+    clickSound.Parent = SoundService
+    clickSound:Play()
 end)
 UICorner.Parent = ImageButton1
 
@@ -592,6 +603,7 @@ local LogoToggle = Instance.new("ImageLabel")
 
             UICorner_4.CornerRadius = UDim.new(0, 10)
             UICorner_4.Parent = Circle
+
 
             Button.MouseButton1Click:Connect(function()
                 if toggled == false then
@@ -3294,7 +3306,7 @@ end)
 print("Load Script")
 --akhiran fitur sc
 --Icon Tab
-local Library = Update:Window("                  SEA 1","104397992902189",Enum.KeyCode.RightControl); --12523036534
+local Library = Update:Window("                  SEA 2","https://www.roblox.com/headshot-thumbnail/image?userId=".. LocalPlayer.UserId .."&width=420&height=420&format=png",Enum.KeyCode.RightControl); --"104397992902189",Enum.KeyCode.RightControl); --12523036534
 
 local H = Library:AddTab("Home","6026568198")
 local Main = Library:AddTab("Level Farm","13075651575")
@@ -3312,9 +3324,39 @@ local Dms = Library:AddTab("Sea Event","11156061121")
 --mulai masuk ke fitur sc
 
 H:AddSeperator("Made By Medusa Script")
-H:AddLabel("Click for copy link")
-H:AddLabel("Comingsoon New Update")
-H:AddLabel("Add Fitur Over Power")
+
+H:AddLabel("Executor : ".. identifyexecutor())
+H:AddLabel("Name : ".. game.Players.LocalPlayer.Name)
+
+local locallv = H:AddLabel("Level :")
+    
+    spawn(function()
+        while wait() do
+            pcall(function()
+                locallv:Set("Level :".." "..game:GetService("Players").LocalPlayer.Data.Level.Value)
+            end)
+        end
+    end)
+    
+    local localrace = H:AddLabel("Race :")
+    
+    spawn(function()
+        while wait() do
+            pcall(function()
+                localrace:Set("Race :".." "..game:GetService("Players").LocalPlayer.Data.Race.Value)
+            end)
+        end
+    end)
+    
+    local localbeli = H:AddLabel("Beli :")
+    
+    spawn(function()
+        while wait() do
+            pcall(function()
+                localbeli:Set("Beli :".." "..game:GetService("Players").LocalPlayer.Data.Beli.Value)
+            end)
+        end
+    end)
 
 H:AddButton("Buy Permanent Key",function()
 setclipboard("https://discord.gg/brutality-hub-1182005198206545941")
@@ -4007,6 +4049,22 @@ spawn(function()
      end
  end
 end)
+
+Main:AddToggle("Auto Stop Legendary Item (sea 2-3)",true ,_G.StopChest ,function(value)
+    _G.StopChest = value
+end)
+
+    spawn(function()
+        while wait() do
+        if _G.StopChest then
+            if game.Players.LocalPlayer.Backpack:FindFirstChild("Fist of Darkness") or game.Players.LocalPlayer.Character:FindFirstChild("Fist of Darkness") or game.Players.LocalPlayer.Backpack:FindFirstChild("God's Chalice") or game.Players.LocalPlayer.Character:FindFirstChild("God's Chalice") then
+                AutoFarmChest = false
+                StopTween(AutoFarmChest)
+                TweenChest:Set(false)
+            end
+        end
+    end
+    end)
 
 Main:AddToggle("Auto Farm Chest Mirage island",false,function(value)
 _G.AutoChestMirage = value
@@ -16535,18 +16593,14 @@ spawn(function()
 print("Brutality Hub Load Complete")
 
 game.StarterGui:SetCore("SendNotification", {
-   Icon = "http://www.roblox.com/asset/?id=110958770625024";
-   Title = "WEBHOOK NOTIFY", 
-   Text = "Join Server Discord";
-})
-wait(3)
+    Icon = "http://www.roblox.com/asset/?id=18395460459";
+    Title = "CHANNEL YOUTUBE", 
+    Text = "Medusa Script Roblox";
+   })
+wait(2)
+
 game.StarterGui:SetCore("SendNotification", {
- Icon = "http://www.roblox.com/asset/?id=18395460459";
- Title = "CHANNEL YOUTUBE", 
- Text = "Medusa Script Roblox";
-})
-game.StarterGui:SetCore("SendNotification", {
-   Icon = "http://www.roblox.com/asset/?id=110958770625024";
-   Title = "BRUTALITY HUB", 
-   Text = "Made By Medusa Script";
+   Icon = "https://www.roblox.com/headshot-thumbnail/image?userId=".. LocalPlayer.UserId.."&width=420&height=420&format=png";
+   Title = "Hello My Friend", 
+   Text = "Name: ".. game.Players.LocalPlayer.Name;
 })
