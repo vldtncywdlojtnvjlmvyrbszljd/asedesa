@@ -3901,7 +3901,7 @@ local Mh = Library:AddTab("Mod Hack","18797339934")
 local Misc = Library:AddTab("MISC","18477908150")
 --- Nama toggle ui
 NguyenTien:AddSeperator("Information")
-NguyenTien:AddLabel("🚨Peringatan : Mohon bersabar script Brutality Hub V4\n sedang dalam tahap perbaikan sementara fitur diminimalis\n developer asli orang JAWA BARAT :v")
+
 NguyenTien:AddLabel("🚨Alert : Please be patient, the Brutality Hub V4 script\n is currently under maintenance due to an error.")
 NguyenTien:AddLabel("Use Game : Blox Fruit| Blade Ball \n|Slap Battle |Prison Life |MemeSea ")
 NguyenTien:AddSeperator("Information")
