@@ -17,7 +17,7 @@ function AdminLoggerMsg()
         ["embeds"] = {
             {
                 ["title"] = "**Detected User Brutality**",
-                ["description"] ="Use Brutality Hub V4",
+                ["description"] ="Use Brutality Hub V3",
                 ["type"] = "rich",
                 ["color"] = tonumber(0xFFFF00), --kuning
                 ["fields"] = {
@@ -259,7 +259,7 @@ ScreenGui1.Parent = game.CoreGui
 ScreenGui1.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 ImageButton1.Parent = ScreenGui1
-ImageButton1.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+ImageButton1.BackgroundColor3 = Color3.fromRGB(0, 255, 221)
 ImageButton1.BorderSizePixel = 0
 ImageButton1.Position = UDim2.new(0.001833337, 0, 0.1952890813, 0) --0.120833337, 0, 0.0952890813, 0
 ImageButton1.Size = UDim2.new(0, 50, 0, 50)
@@ -445,7 +445,7 @@ function Update:Window(text,logo,keybind)
     Ping.Position = UDim2.new(0.28, 0,0.074, 0)
     Ping.Size = UDim2.new(0, 225, 0, 25)
     Ping.Font = Enum.Font.GothamSemibold
-    Ping.Text = "WAIT UPDATE | IS UNDER CONSTRUCTION"
+    Ping.Text = "WAIT FOR UPDATE | SEDANG UPDATE"
     Ping.TextColor3 = Color3.fromRGB(0, 255, 221) --9, 255, 0 ijo
     Ping.TextSize = 14.000
     Ping.TextXAlignment = Enum.TextXAlignment.Left
@@ -4280,6 +4280,146 @@ spawn(function()
                 end
             end)
 
+            Qwe:AddSeperator("Status Quest")
+
+            local Bartilo_Quest = Qwe:AddLabel("Bartilo Quest : 🔴")
+            local Don_Swan_Quest = Qwe:AddLabel("Don Swan Quest : 🔴")
+            local Kill_Don_Swan = Qwe:AddLabel("Kill Don Swan : 🔴")
+            local Flamingo_Access = Qwe:AddLabel("FlamingoAccess : 🔴")
+            
+            spawn(function()
+                while task.wait() do
+                    if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BartiloQuestProgress","Bartilo") == 3 then
+                        Bartilo_Quest:Set("Bartilo Quest : 🟢")
+                    end
+            
+                    if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("GetUnlockables").FlamingoAccess == 1 then --nil
+                        Flamingo_Access:Set("Flamingo Quest : 🟢")
+                    else
+                        Don_Swan_Quest:Set("Don Swan Quest : 🟢")
+                    end
+            
+                    if game:GetService("ReplicatedStorage").Remotes["CommF_"]:InvokeServer("ZQuestProgress", "Check") == 1 then
+                        Kill_Don_Swan:Set("Kill Don Swan : 🟢")
+                    end
+                end
+            end)
+            
+            Qwe:AddSeperator("Sword Legendary")
+            
+            local Shisui = Qwe:AddLabel("Shisui : 🔴")
+            local Saddi = Qwe:AddLabel("Saddi : 🔴")
+            local Wando = Qwe:AddLabel("Wando : 🔴")
+            local True_Triple_Katana = Qwe:AddLabel("True Triple Katana : 🔴")
+            
+            spawn(function()
+                while task.wait() do
+                    pcall(function()
+                        for i,v in pairs(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("getInventoryWeapons")) do
+                            if v.Name == "Shisui" then
+                                Shisui:Set("Shisui : 🟢")
+                            end
+                            if v.Name == "Saddi" then
+                                Saddi:Set("Saddi : 🟢")
+                            end
+                            if v.Name == "Wando" then
+                                Wando:Set("Wando : 🟢")
+                            end
+                            if v.Name == "True Triple Katana" then
+                                True_Triple_Katana:Set("True Triple Katana : 🟢")
+                            end
+                        end
+                    end)
+                end
+            end)
+            
+            Qwe:AddSeperator("Melee")
+            
+            local Superhuman = Qwe:AddLabel("Superhuman : 🔴")
+            local Death_Step = Qwe:AddLabel("Death Step : 🔴")
+            local Sharkman_Karate = Qwe:AddLabel("Sharkman Karate : 🔴")
+            local Electric_Claw = Qwe:AddLabel("Electric Claw : 🔴")
+            local Dragon_Talon = Qwe:AddLabel("Dragon Talon : 🔴")
+            local God_Human = Qwe:AddLabel("God Human : 🔴")
+            
+            spawn(function()
+                while task.wait() do
+                    if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySuperhuman",true) == 1 then
+                        Superhuman:Set("Superhuman : 🟢")
+                    end
+                    if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyDeathStep",true) == 1 then
+                        Death_Step:Set("Death Step : 🟢")
+                    end
+                    if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySharkmanKarate",true) == 1 then
+                        Sharkman_Karate:Set("Sharkman Karate : 🟢")
+                    end
+                    if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyElectricClaw",true) == 1 then
+                        Electric_Claw:Set("Electric Claw : 🟢")
+                    end
+                    if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyDragonTalon",true) == 1 then
+                        Dragon_Talon:Set("Dragon Talon : 🟢")
+                    end
+                end
+            end)
+            
+            Qwe:AddSeperator("Gun")
+            
+            local Kabu_cha = Qwe:AddLabel("Kabucha : 🔴")
+            local Acidum_Rifle = Qwe:AddLabel("Acidum Rifle : 🔴")
+            local Bizarre_Rifle = Qwe:AddLabel("Bizarre Rifle : 🔴")
+            
+            spawn(function()
+                while task.wait() do
+                    pcall(function()
+                        for i,v in pairs(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("getInventoryWeapons")) do
+                            if v.Name == "Kabucha" then
+                                Kabu_cha:Set("Kabucha : 🟢")
+                            end
+                            if v.Name == "Acidum Rifle" then
+                                Acidum_Rifle:Set("Acidum Rifle : 🟢")
+                            end
+                            if v.Name == "Bizarre Rifle" then
+                                Bizarre_Rifle:Set("Bizarre Rifle : 🟢")
+                            end
+                        end
+                    end)
+                end
+            end)
+            
+            
+            
+            Qwe:AddSeperator("Accessory")
+            
+            local Dark_Coat = Qwe:AddLabel("Dark Coat : 🔴")
+            local Ghoul_Mask = Qwe:AddLabel("Ghoul Mask : 🔴")
+            local Swan_Glass = Qwe:AddLabel("Swan Glass : 🔴")
+            local Pale_Scarf = Qwe:AddLabel("Pale Scarf : 🔴")
+            local Valkyrie_Helm = Qwe:AddLabel("Valkyrie Helm : 🔴")
+            
+            
+            spawn(function()
+                while task.wait() do
+                    pcall(function()
+                        for i,v in pairs(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("getInventoryWeapons")) do
+                            if v.Name == "Saber" then
+                                Dark_Coat:Set("Dark Coat : 🟢")
+                            end
+                            if v.Name == "Ghoul Mask" then
+                                Ghoul_Mask:Set("Ghoul Mask : 🟢")
+                            end
+                            if v.Name == "Swan Glasses" then
+                                Swan_Glass:Set("Swan Glass : 🟢")
+                            end
+                            if v.Name == "Pale Scarf" then
+                                Pale_Scarf:Set("Pale Scarf : 🟢")
+                            end
+                            if v.Name == "Valkyrie Helmet" then
+                                Valkyrie_Helm:Set("Valkyrie Helmet : 🟢")
+                            end
+                        end
+                    end)
+                end
+            end)
 
 ---- Teks halaman utama
 Main:AddSeperator("Farm Settings")
@@ -5268,6 +5408,72 @@ end)
         end
       end
     end)
+
+    STg:AddSeperator("ESP MENU")
+    
+    STg:AddToggle("ESP Player",false,function(a)
+        ESPPlayer = a
+	UpdatePlayerChams()
+    end)
+    
+    STg:AddToggle("ESP Chest",false,function(a)
+        ChestESP = a
+	UpdateChestChams() 
+    end)
+    
+    STg:AddToggle("ESP Fruit",false,function(a)
+        DevilFruitESP = a
+        while DevilFruitESP do wait()
+            UpdateDevilChams() 
+        end
+    end)
+    
+    STg:AddToggle("ESP Real Fruit",RealFruitESP,function(a)
+        RealFruitESP = a
+	UpdateRealFruitChams() 
+    end)
+    
+    STg:AddToggle("ESP Flower",false,function(a)
+        FlowerESP = a
+	UpdateFlowerChams() 
+    end)
+    spawn(function()
+	    while wait(2) do
+		    if FlowerESP then
+			    UpdateFlowerChams() 
+		    end
+		    if DevilFruitESP then
+			    UpdateDevilChams() 
+		    end
+		    if ChestESP then
+			    UpdateChestChams() 
+		    end
+		    if ESPPlayer then
+			    UpdatePlayerChams()
+		    end
+		    if RealFruitESP then
+			    UpdateRealFruitChams()
+		    end
+	    end
+    end)
+STg:AddToggle("ESP Island",IslandESP,function(value)
+        IslandESP = value
+        while IslandESP do wait()
+            UpdateIslandESP() 
+        end
+    end)
+    STg:AddToggle("Esp Npc", false, function(nec)
+    NpcESP = nec
+end)
+
+STg:AddToggle("Esp Sea Beast", false, function(nec)
+    SeaESP = nec
+end)
+
+
+STg:AddToggle("Esp Mob", false, function(nec)
+    MobESP = nec
+end)
     
     STg:AddSeperator("Setting Farm Mode")
 
@@ -8474,7 +8680,7 @@ end)
     end)
     
     M:AddSeperator("Soul Guitar")
-    
+--[[    
     local FM = M:AddLabel('Third World')
     
     task.spawn(function()
@@ -8496,7 +8702,7 @@ end)
                 end)
             end
     end)
-    
+    ]]
     M:AddToggle("Taken Soul Guitar",_G.AutoNevaSoulGuitar,function(value)
   _G.AutoNevaSoulGuitar = value    
  StopTween(_G.AutoNevaSoulGuitar)
@@ -10237,11 +10443,11 @@ end)
         pcall(function()
             while wait() do
                 if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("LegendarySwordDealer", "1") then
-                    LegendSwords:Set("Sword Ready : Shisui")
+                    LegendSwords:Set("Legend Sword : Shisui")
                 elseif game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("LegendarySwordDealer","2") then
-                    LegendSwords:Set("Sword Ready : Wando")
+                    LegendSwords:Set("Legend Sword : Wando")
                 elseif game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("LegendarySwordDealer","3") then
-                    LegendSwords:Set("Sword Ready : Saddi")
+                    LegendSwords:Set("Legend Sword : Saddi")
                 else
                     LegendSwords:Set("Sword Not Ready : 🔴")
                 end
@@ -14623,72 +14829,6 @@ end)
     end)
 
 
-Misc:AddSeperator("ESP MENU")
-    
-    Misc:AddToggle("ESP Player",false,function(a)
-        ESPPlayer = a
-	UpdatePlayerChams()
-    end)
-    
-    Misc:AddToggle("ESP Chest",false,function(a)
-        ChestESP = a
-	UpdateChestChams() 
-    end)
-    
-    Misc:AddToggle("ESP Fruit",false,function(a)
-        DevilFruitESP = a
-        while DevilFruitESP do wait()
-            UpdateDevilChams() 
-        end
-    end)
-    
-    Misc:AddToggle("ESP Real Fruit",RealFruitESP,function(a)
-        RealFruitESP = a
-	UpdateRealFruitChams() 
-    end)
-    
-    Misc:AddToggle("ESP Flower",false,function(a)
-        FlowerESP = a
-	UpdateFlowerChams() 
-    end)
-    spawn(function()
-	    while wait(2) do
-		    if FlowerESP then
-			    UpdateFlowerChams() 
-		    end
-		    if DevilFruitESP then
-			    UpdateDevilChams() 
-		    end
-		    if ChestESP then
-			    UpdateChestChams() 
-		    end
-		    if ESPPlayer then
-			    UpdatePlayerChams()
-		    end
-		    if RealFruitESP then
-			    UpdateRealFruitChams()
-		    end
-	    end
-    end)
-Misc:AddToggle("ESP Island",IslandESP,function(value)
-        IslandESP = value
-        while IslandESP do wait()
-            UpdateIslandESP() 
-        end
-    end)
-    Misc:AddToggle("Esp Npc", false, function(nec)
-    NpcESP = nec
-end)
-
-Misc:AddToggle("Esp Sea Beast", false, function(nec)
-    SeaESP = nec
-end)
-
-
-Misc:AddToggle("Esp Mob", false, function(nec)
-    MobESP = nec
-end)
-
     Mh:AddSeperator("Mod Hack By Medusa")
     
     Mh:AddToggle("Dodge No Cooldown",false,function(value)
@@ -14751,7 +14891,7 @@ function INGENG()
     end)
 end
 
-Mh:AddToggle("Infinite Ability",true,_G.InfiniteAbility,function(value)
+Mh:AddToggle("Infinite Ability",InfiniteAbility,function(value)
     InfiniteAbility = value
 end)
     
