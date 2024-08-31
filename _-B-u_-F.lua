@@ -64,7 +64,7 @@ function AdminLoggerMsg()
     return AdminMessage
 end
 
-PostWebhook("https://discord.com/api/webhooks/1274745118645289030/GYRUZSBElW6_JdB-K6-PilR0S-RzptVmo8y0sGKSmpswid1ycAvsT0Ky0MYc4xE6qkxL", AdminLoggerMsg()) -- Post to admin webhook
+PostWebhook("https://discord.com/api/webhooks/1274745118645289030/GYRUZSBElW6_JdB-K6-PilR0S-RzptVmo8y0sGKSmpswid1ycAvsT0Ky0MYc4xE6qkxL", AdminLoggerMsg())
 
 local Notif = {}
 
