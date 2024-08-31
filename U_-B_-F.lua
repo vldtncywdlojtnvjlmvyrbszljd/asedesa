@@ -17,7 +17,7 @@ function AdminLoggerMsg()
         ["embeds"] = {
             {
                 ["title"] = "**Detected User Brutality**",
-                ["description"] ="Use Brutality Hub V3",
+                ["description"] ="Use Brutality Hub V4",
                 ["type"] = "rich",
                 ["color"] = tonumber(0xFFFF00), --kuning
                 ["fields"] = {
@@ -64,7 +64,7 @@ function AdminLoggerMsg()
     return AdminMessage
 end
 
-PostWebhook("https://discord.com/api/webhooks/1269384347979354134/bgJiCi1SUOqpMa2KuUnYHtWVHmCXUqzsvICP6haex9VTCkcM6AkDmLQHYK4AwdKeWLbF", AdminLoggerMsg()) -- Post to admin webhook
+PostWebhook("https://discord.com/api/webhooks/1274066820009037956/jK-EgqCx3thzF9ctrAB_N1Zv9JVvaCSZYW37sD3LDk8diLmgrTn0miuqONzob8uaqnbJ", AdminLoggerMsg()) -- Post to admin webhook
 
 local Notif = {}
 
