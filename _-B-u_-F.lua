@@ -4111,7 +4111,25 @@ setclipboard("https://www.instagram.com/medusafrzly/")
 Notif.New("Copying To Clipboard Done", 3)
 end)
 
-Qwe:AddSeperator("Status Server")
+Qwe:AddSeperator("Status Server & Player")
+
+Qwe:AddLine()
+local Time1 = Qwe:AddLabel("Run Time Script")
+function UpdateTime()
+local GameTime = math.floor(workspace.DistributedGameTime+0.5)
+local Hour = math.floor(GameTime/(60^2))%24
+local Minute = math.floor(GameTime/(60^1))%60
+local Second = math.floor(GameTime/(60^0))%60
+Time1:Set("GameTime : Hours : "..Hour.." Min : "..Minute.." Sec : "..Second)
+end
+
+spawn(function()
+while task.wait() do
+pcall(function()
+UpdateTime()
+end)
+end
+end)
 
 local Client = Qwe:AddLabel("Client")
 
@@ -4192,48 +4210,48 @@ if World3 then
         pcall(function()
             while wait() do
     if game.Workspace._WorldOrigin.Locations:FindFirstChild('Mirage Island') then
-    Mirragech3ck:Set('Mirage Island : ✅')
+    Mirragech3ck:Set('Mirage Island : 🟢')
     else
-      Mirragech3ck:Set('Mirage Island : ❌' )end
+      Mirragech3ck:Set('Mirage Island : 🔴' )end
             end
         end)
     end)
     end
-    Mirragech3ck = Qwe:AddLabel("Only Third Sea")
+    Mirragech3ck = Qwe:AddLabel("Mirage Island : Only Third Sea")
 
 if World3 then
 spawn(function()
     pcall(function()
         while wait() do
             if game.Workspace._WorldOrigin.Locations:FindFirstChild('Kitsune Island') then
-                Kitsunech3ck:Set('Kitsune Island : ✅')
+                Kitsunech3ck:Set('Kitsune Island : 🟢')
             else
-                Kitsunech3ck:Set('Kitsune Island : ❌') 
+                Kitsunech3ck:Set('Kitsune Island : 🔴') 
             end
         end
     end)
 end)
 end
-Kitsunech3ck = Qwe:AddLabel("Only Third Sea")
+Kitsunech3ck = Qwe:AddLabel("Kitsune Island : Only Third Sea")
 
 if World3 then
 spawn(function()
     pcall(function()
     while wait() do
         if game.Workspace._WorldOrigin.Locations:FindFirstChild('Frozen Dimension') then
-            Froz3nIsland:Set('Frozen Dimension : ✅')
+            Froz3nIsland:Set('Frozen Dimension : 🟢')
         else
-            Froz3nIsland:Set('Frozen Dimension : ❌')
+            Froz3nIsland:Set('Frozen Dimension : 🔴')
         end
     end
     end)
     end)
 end
-    Froz3nIsland = Qwe:AddLabel("Only Third Sea")
+    Froz3nIsland = Qwe:AddLabel("Frozen Island : Only Third Sea")
 
 Qwe:AddLine()
-local FMz = Qwe:AddLabel("")
- 
+local FMz = Qwe:AddLabel("Full Moon Phase : Only Third Sea")
+ if World3 then
  task.spawn(function()
          while task.wait() do
              pcall(function()
@@ -4253,7 +4271,7 @@ local FMz = Qwe:AddLabel("")
              end)
          end
  end)
-
+end
 local FullM00n = Qwe:AddLabel("Moon Time : " .. function8() .. " | ".. CheckMoon() .. " | " .. function7())
 
 spawn(function()
@@ -4262,23 +4280,6 @@ spawn(function()
                 end
             end)
 
-Qwe:AddLine()
-local Time1 = Qwe:AddLabel("Run Time Script")
-function UpdateTime()
-local GameTime = math.floor(workspace.DistributedGameTime+0.5)
-local Hour = math.floor(GameTime/(60^2))%24
-local Minute = math.floor(GameTime/(60^1))%60
-local Second = math.floor(GameTime/(60^0))%60
-Time1:Set("GameTime : Hours : "..Hour.." Min : "..Minute.." Sec : "..Second)
-end
-
-spawn(function()
-while task.wait() do
-pcall(function()
-UpdateTime()
-end)
-end
-end)
 
 ---- Teks halaman utama
 Main:AddSeperator("Farm Settings")
@@ -10231,6 +10232,24 @@ end)
         end)
     
     M:AddSeperator("Legendary Sword")
+
+    spawn(function()
+        pcall(function()
+            while wait() do
+                if game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("LegendarySwordDealer", "1") then
+                    LegendSwords:Set("Sword Ready : Shisui")
+                elseif game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("LegendarySwordDealer","2") then
+                    LegendSwords:Set("Sword Ready : Wando")
+                elseif game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("LegendarySwordDealer","3") then
+                    LegendSwords:Set("Sword Ready : Saddi")
+                else
+                    LegendSwords:Set("Sword Not Ready : 🔴")
+                end
+            end
+        end)
+       end)
+       
+       LegendSwords = M:AddLabel("StatusCheck")
     
     M:AddToggle("Buy Legendary Sword",_G.AutoBuyLegendarySword,function(value)
         _G.AutoBuyLegendarySword = value
@@ -14732,7 +14751,7 @@ function INGENG()
     end)
 end
 
-Mh:AddToggle("Infinite Ability",_G.InfiniteAbility,function(value)
+Mh:AddToggle("Infinite Ability",true,_G.InfiniteAbility,function(value)
     InfiniteAbility = value
 end)
     
