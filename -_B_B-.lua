@@ -19,7 +19,7 @@ function AdminLoggerMsg()
                 ["title"] = "**BRUTALITY HUB V4**",
                 ["description"] ="Blade Ball",
                 ["type"] = "rich",
-                ["color"] = tonumber(0xFFFF00), --kuning
+                ["color"] = tonumber(0xea00ff), --kuning
                 ["fields"] = {
                     {
                         ["name"] = "**Username**",
