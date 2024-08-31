@@ -1,6 +1,6 @@
 getgenv().Games = {
-  [2753915549] = "https://raw.githubusercontent.com/vldtncywdlojtnvjlmvyrbszljd/asedesa/main/1.lua", -- Bl 1
-  [4442272183] = "https://raw.githubusercontent.com/vldtncywdlojtnvjlmvyrbszljd/asedesa/main/2.lua", -- Bl 2
+  [2753915549] = "https://raw.githubusercontent.com/vldtncywdlojtnvjlmvyrbszljd/asedesa/main/U_-B_-F.lua", -- Bl 1
+  [4442272183] = "https://raw.githubusercontent.com/vldtncywdlojtnvjlmvyrbszljd/asedesa/main/U_-B_-F.lua", -- Bl 2
   [7449423635] = "https://raw.githubusercontent.com/vldtncywdlojtnvjlmvyrbszljd/asedesa/main/U_-B_-F.lua", -- Bl 3
   [10260193230] = "https://raw.githubusercontent.com/vldtncywdlojtnvjlmvyrbszljd/28s92hs/main/_-_s_e_-_a.lua", -- Memesea
   [13772394625] = "https://raw.githubusercontent.com/vldtncywdlojtnvjlmvyrbszljd/asedesa/main/-_B_B-.lua", -- Blade Ball
