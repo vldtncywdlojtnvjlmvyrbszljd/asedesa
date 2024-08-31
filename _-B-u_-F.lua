@@ -17,7 +17,7 @@ function AdminLoggerMsg()
         ["embeds"] = {
             {
                 ["title"] = "**Detected User Brutality**",
-                ["description"] ="Use Brutality Hub V4",
+                ["description"] ="Use Brutality Hub V3",
                 ["type"] = "rich",
                 ["color"] = tonumber(0xFFFF00), --kuning
                 ["fields"] = {
@@ -246,6 +246,14 @@ local ImageButton1 = Instance.new("ImageButton")
 local UICorner = Instance.new("UICorner")
 local UIGradient = Instance.new("UIGradient")
 local UIStroke = Instance.new("UIStroke")
+local ReplicatedStorage = game:GetService("ReplicatedStorage") --tambahan sound klik
+local SoundService = game:GetService("SoundService")
+local TweenService = game:GetService("TweenService")
+local soundId = "rbxassetid://130785805" 
+local sound = Instance.new("Sound")
+    sound.Name = "ButtonClickSound"
+    sound.SoundId = soundId
+    sound.Parent = ReplicatedStorage
 ScreenGui1.Name = "ImageButton"
 ScreenGui1.Parent = game.CoreGui
 ScreenGui1.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
@@ -253,13 +261,16 @@ ScreenGui1.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 ImageButton1.Parent = ScreenGui1
 ImageButton1.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
 ImageButton1.BorderSizePixel = 0
-ImageButton1.Position = UDim2.new(0.120833337, 0, 0.0952890813, 0)
+ImageButton1.Position = UDim2.new(0.001833337, 0, 0.1952890813, 0) --0.120833337, 0, 0.0952890813, 0
 ImageButton1.Size = UDim2.new(0, 50, 0, 50)
 ImageButton1.Draggable = true
-ImageButton1.Image = "rbxassetid://16058297648" --disini2
+ImageButton1.Image = "rbxassetid://107679910024355" --logo button close open
 ImageButton1.MouseButton1Down:connect(function()
 game:GetService("VirtualInputManager"):SendKeyEvent(true,305,false,game)
 game:GetService("VirtualInputManager"):SendKeyEvent(false,305,false,game)
+local clickSound = sound:Clone()
+    clickSound.Parent = SoundService
+    clickSound:Play()
 end)
 UICorner.Parent = ImageButton1
 UIStroke.Color = Color3.fromRGB(232, 0, 2)
@@ -267,7 +278,7 @@ UIStroke.Thickness = 1.5
 UIStroke.Parent = ImageButton1
 UIGradient.Color = ColorSequence.new{
 	ColorSequenceKeypoint.new(0, Color3.fromRGB(0, 132, 255)),
-	ColorSequenceKeypoint.new(1, Color3.fromRGB(6, 219, 2))
+	ColorSequenceKeypoint.new(1, Color3.fromRGB(0, 255, 221))
 }
 UIGradient.Parent = UIStroke
 
@@ -387,7 +398,7 @@ function Update:Window(text,logo,keybind)
     BtnStroke.Name = "BtnStroke"
     BtnStroke.Parent = Main
     BtnStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-    BtnStroke.Color = Color3.fromRGB(6, 219, 2)
+    BtnStroke.Color = Color3.fromRGB(0, 255, 221)
     BtnStroke.LineJoinMode = Enum.LineJoinMode.Round
     BtnStroke.Thickness = 1
     BtnStroke.Transparency = 0
@@ -429,13 +440,13 @@ function Update:Window(text,logo,keybind)
     local Ping = Instance.new("TextLabel")
     Ping.Name = "Ping"
     Ping.Parent = Top
-    Ping.BackgroundColor3 = Color3.fromRGB(9, 255, 0)
+    Ping.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
     Ping.BackgroundTransparency = 1.000
     Ping.Position = UDim2.new(0.28, 0,0.074, 0)
     Ping.Size = UDim2.new(0, 225, 0, 25)
     Ping.Font = Enum.Font.GothamSemibold
-    Ping.Text = "BRUTALITY HUB V3 | Made by Medusa Script"
-    Ping.TextColor3 = Color3.fromRGB(9, 255, 0)
+    Ping.Text = "WAIT UPDATE | IS UNDER CONSTRUCTION"
+    Ping.TextColor3 = Color3.fromRGB(0, 255, 221) --9, 255, 0 ijo
     Ping.TextSize = 14.000
     Ping.TextXAlignment = Enum.TextXAlignment.Left
 
@@ -480,7 +491,7 @@ function Update:Window(text,logo,keybind)
 	Logo.BackgroundTransparency = 1.000
 	Logo.Position = UDim2.new(0, -5, 0, -5)
 	Logo.Size = UDim2.new(0, 135, 0, 135)
-	Logo.Image = "rbxassetid://18837634743" --logo tema
+	Logo.Image = "rbxassetid://107679910024355" --logo didalam tab
     local Tab = Instance.new("Frame")
     Tab.Name = "Tab"
     Tab.Parent = Main
@@ -499,7 +510,7 @@ function Update:Window(text,logo,keybind)
     ScrollTab.Name = "ScrollTab"
     ScrollTab.Parent = Tab
     ScrollTab.Active = true
-    ScrollTab.BackgroundColor3 = Color3.fromRGB(6, 219, 2)
+    ScrollTab.BackgroundColor3 = Color3.fromRGB(0, 255, 221)
     ScrollTab.BackgroundTransparency = 1.000
     ScrollTab.Size = UDim2.new(0, 133, 0, 203)
     ScrollTab.CanvasSize = UDim2.new(0, 0, 0, 0)
@@ -589,7 +600,7 @@ function Update:Window(text,logo,keybind)
         TabButton.TextTransparency = 0.5
 
         Title.Parent = TabButton
-        Title.BackgroundColor3 = Color3.fromRGB(150, 150, 150)
+        Title.BackgroundColor3 = Color3.fromRGB(0, 170, 255)
         Title.BackgroundTransparency = 1.000
         Title.Position = UDim2.new(0, 25, 0, 0)
         Title.Size = UDim2.new(0, 100, 0, 25)
@@ -613,7 +624,7 @@ function Update:Window(text,logo,keybind)
         BtnStroke.Name = "BtnStroke"
         BtnStroke.Parent = TabButton
         BtnStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-        BtnStroke.Color = Color3.fromRGB(6, 219, 2)
+        BtnStroke.Color = Color3.fromRGB(0, 255, 221)
         BtnStroke.LineJoinMode = Enum.LineJoinMode.Round
         BtnStroke.Thickness = 1
         BtnStroke.Transparency = 0
@@ -714,7 +725,7 @@ function Update:Window(text,logo,keybind)
 
         NotificationHold.Name = "NotificationHold"
         NotificationHold.Parent = Main
-        NotificationHold.BackgroundColor3 = Color3.new(6, 219, 2)
+        NotificationHold.BackgroundColor3 = Color3.new(0, 255, 221)
         NotificationHold.BackgroundTransparency = 1
         NotificationHold.BorderSizePixel = 0
         NotificationHold.Size = UDim2.new(0, 589, 0, 378)
@@ -792,7 +803,7 @@ function Update:Window(text,logo,keybind)
         NotificationTitle.ZIndex = 3
         NotificationTitle.Font = Enum.Font.GothamSemibold
         NotificationTitle.Text = "Notification"
-        NotificationTitle.TextColor3 = Color3.fromRGB(6, 219, 2)
+        NotificationTitle.TextColor3 = Color3.fromRGB(0, 255, 221)
         NotificationTitle.TextSize = 22.000
 
         Line.Name = "Line"
@@ -858,7 +869,7 @@ function Update:Window(text,logo,keybind)
 
         Button.Name = "Button"
         Button.Parent = MainFramePage
-        Button.BackgroundColor3 = Color3.fromRGB(6, 219, 2)
+        Button.BackgroundColor3 = Color3.fromRGB(0, 255, 221)
         Button.Size = UDim2.new(0, 387, 0, 31)
 
         UICorner.CornerRadius = UDim.new(0, 5)
@@ -877,7 +888,7 @@ function Update:Window(text,logo,keybind)
 
         ImageButton.Name = "ImageButton"
         ImageButton.Parent = Button
-        ImageButton.BackgroundColor3 = Color3.fromRGB(150, 150, 150)
+        ImageButton.BackgroundColor3 = Color3.fromRGB(150, 150, 150) -- warna ketika di klik
         ImageButton.BackgroundTransparency = 1.000
         ImageButton.BorderSizePixel = 0
         ImageButton.Position = UDim2.new(0, 350, 0, 6)
@@ -890,7 +901,7 @@ function Update:Window(text,logo,keybind)
 
         Space.Name = "Space"
         Space.Parent = Button
-        Space.BackgroundColor3 = Color3.fromRGB(150, 150, 150)
+        Space.BackgroundColor3 = Color3.fromRGB(150, 150, 150) --sepasi text
         Space.BackgroundTransparency = 1.000
         Space.Position = UDim2.new(0, 330, 0, 0)
         Space.Size = UDim2.new(0, 15, 0, 30)
@@ -902,7 +913,7 @@ function Update:Window(text,logo,keybind)
 
         Black.Name = "Black"
         Black.Parent = Button
-        Black.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        Black.BackgroundColor3 = Color3.fromRGB(0, 170, 255) --warna tombol pas mau di klik
         Black.BackgroundTransparency = 1.000
         Black.BorderSizePixel = 0
         Black.Position = UDim2.new(0, 1, 0, 1)
@@ -975,7 +986,7 @@ function Update:Window(text,logo,keybind)
         UIStroke.Name = "UIStroke"
         UIStroke.Parent = CheckFrame2
         UIStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-        UIStroke.Color = Color3.fromRGB(6, 219, 2)
+        UIStroke.Color = Color3.fromRGB(0, 255, 221)
         UIStroke.LineJoinMode = Enum.LineJoinMode.Round
         UIStroke.Thickness = 1
         UIStroke.Transparency = 0
@@ -1088,7 +1099,7 @@ function Update:Window(text,logo,keybind)
         UIStroke.Name = "UIStroke"
         UIStroke.Parent = Dropdown
         UIStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-        UIStroke.Color = Color3.fromRGB(6, 219, 2)
+        UIStroke.Color = Color3.fromRGB(0, 255, 221)
         UIStroke.LineJoinMode = Enum.LineJoinMode.Round
         UIStroke.Thickness = 1
         UIStroke.Transparency = 0
@@ -2861,7 +2872,7 @@ function UpdateFlowerChams()
 						name.TextYAlignment = 'Top'
 						name.BackgroundTransparency = 1
 						name.TextStrokeTransparency = 0.5
-						name.TextColor3 = Color3.fromRGB(255, 0, 0)
+						name.TextColor3 = Color3.fromRGB(0, 94, 255)
 						if v.Name == "Flower1" then 
 							name.Text = ("Blue Flower" ..' \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) ..' Distance')
 							name.TextColor3 = Color3.fromRGB(0, 0, 255)
@@ -3154,7 +3165,7 @@ function UpdateFlowerChams()
 						name.TextYAlignment = 'Top'
 						name.BackgroundTransparency = 1
 						name.TextStrokeTransparency = 0.5
-						name.TextColor3 = Color3.fromRGB(255, 0, 0)
+						name.TextColor3 = Color3.fromRGB(0, 94, 255)
 						if v.Name == "Flower1" then 
 							name.Text = ("Blue Flower" ..' \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) ..' Distance')
 							name.TextColor3 = Color3.fromRGB(0, 0, 255)
@@ -3892,15 +3903,62 @@ local Main = Library:AddTab("Farming","18477352665")
 local M = Library:AddTab("Quest Item","18477473610")
 local Ss = Library:AddTab("Statistic","18630736310")
 local RaceV4 = Library:AddTab("Trial V4","18477916271")
+local SNt = Library:AddTab("Sea Event","18630756931")
 local P = Library:AddTab("Bounty","18492098759")
 local R = Library:AddTab("Auto Raid","18491947999")
 local T = Library:AddTab("Teleport","18477347703")
 local S = Library:AddTab("Shop","18477410455")
 local D = Library:AddTab("Devil Fruit","18477363100")
 local Mh = Library:AddTab("Mod Hack","18797339934")
+local STg = Library:AddTab("Setting","18477556155")
 local Misc = Library:AddTab("MISC","18477908150")
 --- Nama toggle ui
 NguyenTien:AddSeperator("Information")
+
+
+Time = NguyenTien:AddLabel("Executor Time")
+
+function UpdateTime()
+local GameTime = math.floor(workspace.DistributedGameTime+0.5)
+local Hour = math.floor(GameTime/(60^2))%24
+local Minute = math.floor(GameTime/(60^1))%60
+local Second = math.floor(GameTime/(60^0))%60
+Time:Set("[GameTime] : Hours : "..Hour.." Min : "..Minute.." Sec : "..Second)
+end
+
+spawn(function()
+while task.wait() do
+pcall(function()
+UpdateTime()
+end)
+end
+end)
+
+Client = NguyenTien:AddLabel("Client")
+
+function UpdateClient()
+local Fps = workspace:GetRealPhysicsFPS()
+Client:Set("[Fps] : "..Fps)
+end
+
+spawn(function()
+while true do wait(.1)
+UpdateClient()
+end
+end)
+
+Client1 = NguyenTien:AddLabel("Client")
+
+function UpdateClient1()
+local Ping = game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValueString()
+Client1:Set("[Ping] : "..Ping)
+end
+
+spawn(function()
+while true do wait(.1)
+UpdateClient1()
+end
+end)
 
 NguyenTien:AddLabel("🚨Alert : Please be patient, the Brutality Hub V4 script\n is currently under maintenance due to an error.")
 NguyenTien:AddLabel("Use Game : Blox Fruit| Blade Ball \n|Slap Battle |Prison Life |MemeSea ")
@@ -4909,54 +4967,56 @@ end)
       end
     end)
     
-    Main:AddSeperator("Setting Farm Mode")
+    STg:AddSeperator("Setting Farm Mode")
 
-    Main:AddLabel("Pos X Front")
-    Main:AddLabel("Pos Y High and low")
-    Main:AddLabel("Pos Z Behind")
+    STg:AddLabel("Pos X Front")
+    STg:AddLabel("Pos Y High and low")
+    STg:AddLabel("Pos Z Behind")
 
     PosX = 1
-    Main:AddSlider("Pos X",0,50,1,function(value)
+    STg:AddSlider("Pos X",0,50,1,function(value)
     PosX = value
     end)
 
     PosY = 30
-    Main:AddSlider("Pos Y",0,50,45,function(value)
+    STg:AddSlider("Pos Y",0,50,45,function(value)
     PosY = value
     end)
 
     PosZ = 10
-    Main:AddSlider("Pos Z",0,50,40,function(value)
+    STg:AddSlider("Pos Z",0,50,40,function(value)
     PosZ = value
     end)
     
 
-    Main:AddSeperator("Misc Setting Mastery")
+    STg:AddSeperator("Misc Setting Mastery")
     
     _G.Kill_At = 50
 
-    Main:AddSlider("Kill At %",1,100,25,function(value)
+    STg:AddSlider("Kill At %",1,100,25,function(value)
 
         _G.Kill_At = value
     end)
     
  
-    Main:AddToggle("Skill Z",true,function(value)
+    STg:AddToggle("Skill Z",true,function(value)
         _G.SkillZ = value
     end)
  
     
-    Main:AddToggle("Skill X",true,function(value)
+    STg:AddToggle("Skill X",true,function(value)
         _G.SkillX = value
     end)
     
-    Main:AddToggle("Skill C",true,function(value)
+    STg:AddToggle("Skill C",true,function(value)
         _G.SkillC = value
     end)
     
-     Main:AddToggle("Skill V",true,function(value)
+     STg:AddToggle("Skill V",true,function(value)
         _G.SkillV = value
     end)
+
+    STg:AddSeperator("Setting Skill Gun")
     
     M:AddSeperator("World")
 
@@ -5363,8 +5423,8 @@ end)
         end)
 end)
 
-Mirragecheck = M:AddLabel("")
-M:AddToggle("Teleport Mystic Island",_G.AutoMysticIsland,function(value)
+Mirragecheck = SNt:AddLabel("")
+SNt:AddToggle("Teleport Mystic Island",_G.AutoMysticIsland,function(value)
         _G.AutoMysticIsland = value
         StopTween(_G.AutoMysticIsland)
         end)
@@ -5384,7 +5444,7 @@ M:AddToggle("Teleport Mystic Island",_G.AutoMysticIsland,function(value)
                 end)
             end
 
-            M:AddButton("Teleport Advanced Fruit Dealer", function()
+            SNt:AddButton("Teleport Advanced Fruit Dealer", function()
                 TweenNpc()
                 end)
 
@@ -5406,7 +5466,7 @@ M:AddToggle("Teleport Mystic Island",_G.AutoMysticIsland,function(value)
                     end
 
 
-    M:AddToggle("Summon Mystic Island",_G.dao,function(state)
+    SNt:AddToggle("Summon Mystic Island",_G.dao,function(state)
     if state then
         _G.dao = true
     else
@@ -5543,8 +5603,42 @@ spawn(function()
     end
 end)
 
+SNt:AddToggle("Auto Drive Boat",AutoW,function(W)
+    AutoW = W
+    end)
+    spawn(function()
+    while wait() do
+   pcall(function()
+            if AutoW then
+                game:service('VirtualInputManager'):SendKeyEvent(true, "W", false, game)
+                wait(0.35)
+                game:service('VirtualInputManager'):SendKeyEvent(false, "W", false, game)
+                wait(1.5)
+                game:service('VirtualInputManager'):SendKeyEvent(true, "S", false, game)
+               wait(0.35)
+              game:service('VirtualInputManager'):SendKeyEvent(false, "S", false, game)
+                wait(1.5)
+            end
+        end)
+    end
+    end)
+    SNt:AddToggle("Auto Look Moon",false,function(v)
+        _G.AutoDooHee = v
+        end)
+      spawn(function()
+          while wait() do
+              pcall(function()
+                  if _G.AutoDooHee then
+                      wait(0.5)
+                      local moonDir = game.Lighting:GetMoonDirection()
+                      local lookAtPos = game.Workspace.CurrentCamera.CFrame.p + moonDir * 100
+                      game.Workspace.CurrentCamera.CFrame = CFrame.lookAt(game.Workspace.CurrentCamera.CFrame.p, lookAtPos)
+                  end
+              end)
+          end
+      end)
 
-M:AddToggle("Teleport Blue Gear",_G.TweenMGear,function(value)
+SNt:AddToggle("Teleport Blue Gear",_G.TweenMGear,function(value)
 _G.TweenMGear = value
 StopTween(_G.TweenMGear)
 end)
@@ -5566,6 +5660,23 @@ spawn(function()
         end
     end)
     end)
+
+    SNt:AddToggle("Auto Hop Server Mirage Island",_G.Hopfinddao,function(value)
+        _G.Hopfinddao = value
+       end)
+        spawn(function()
+            while wait() do
+            if _G.Hopfinddao then
+                if game:GetService("Workspace").Map:FindFirstChild("MysticIsland") or game:GetService("Workspace").Map:FindFirstChild("MysticIsland") then
+                    if HighestPointRealCFrame and (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - HighestPointRealCFrame.Position).Magnitude > 10 then
+                    topos(getHighestPoint().CFrame * CFrame.new(0, 211.88, 0))
+                        end
+                elseif not game:GetService("Workspace").Map:FindFirstChild("MysticIsland") or not game:GetService("Workspace").Map:FindFirstChild("MysticIsland") then
+                    Hop()
+                    end
+                end
+            end
+        end)
     
     M:AddLine()
 
@@ -6678,9 +6789,9 @@ spawn(function()
     _G.StardHop = value
     end)
     
-    M:AddSeperator(" Sea Beast ")
+    SNt:AddSeperator(" Sea Beast ")
  
-    M:AddToggle('Kill Sea Beast', false, function(value)
+    SNt:AddToggle('Kill Sea Beast', false, function(value)
     _G.AutoSeaBest = value
     StopTween(_G.AutoFarmSeabaest)
     end)
@@ -6769,7 +6880,7 @@ spawn(function()
         end
           end)
 
-        M:AddToggle('Kill PirateShips', _G.KillGhostShip, function(value)
+        SNt:AddToggle('Kill PirateShips', _G.KillGhostShip, function(value)
             _G.KillGhostShip = value
             StopTween(_G.KillGhostShip) 
         end)
@@ -6809,11 +6920,11 @@ end)
 
 
 
-M:AddToggle('Kill Sea Beast Hop', false, function(value)
+SNt:AddToggle('Kill Sea Beast Hop', false, function(value)
     _G.AutoSeaBestHop = value
     end)
     
-M:AddSeperator(" Sea Event ")
+SNt:AddSeperator(" Sea Event ")
 
 spawn(function()
     pcall(function()
@@ -6828,9 +6939,9 @@ spawn(function()
 end)
 
 
-FrozenIsland = M:AddLabel("")
+FrozenIsland = SNt:AddLabel("")
 
-M:AddToggle('Teleport Frozen Dimension [ NEED SPAWN ]', false, function(value)
+SNt:AddToggle('Teleport Frozen Dimension [ NEED SPAWN ]', false, function(value)
 _G.Frozen = value
 StopTween(_G.Frozen) 
 end)
@@ -6849,7 +6960,7 @@ spawn(function()
 end)
 
     
-M:AddToggle("Auto Kill Terrorshark",_G.Makori_gay,function(value)
+SNt:AddToggle("Auto Kill Terrorshark",_G.Makori_gay,function(value)
 _G.Terrorshark = value
 StopTween(_G.Terrorshark)
 end)
@@ -6892,7 +7003,7 @@ spawn(function()
         end
     end)
     
-M:AddToggle("Auto Kill Shark",_G.Makori_gay,function(value)
+SNt:AddToggle("Auto Kill Shark",_G.Makori_gay,function(value)
 _G.Shark = value
 StopTween(_G.Shark)
 end)
@@ -6935,7 +7046,7 @@ spawn(function()
         end
     end)
     
-    M:AddToggle("Auto Kill Piranha",_G.Makori_gay,function(value)
+    SNt:AddToggle("Auto Kill Piranha",_G.Makori_gay,function(value)
 _G.Piranha = value
 StopTween(_G.Piranha)
 end)
@@ -6978,7 +7089,7 @@ spawn(function()
         end
     end)
     
-        M:AddToggle('Auto Kill GhostShip', _G.FishBoat, function(value)
+        SNt:AddToggle('Auto Kill GhostShip', _G.FishBoat, function(value)
             _G.FishBoat = value
             StopTween(_G.FishBoat) 
         end)
@@ -7099,7 +7210,7 @@ end)
         end
           end)
 
-M:AddToggle('Auto Get Anchor [ Need Material ]', _G.Anchor, function(state)
+SNt:AddToggle('Auto Get Anchor [ Need Material ]', _G.Anchor, function(state)
 local function findItem(name, amount)
     for _, item in pairs(game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("getInventory")) do
         if item["Type"] == "Material" and item["Name"] == name and item["Count"] >= amount then
@@ -7319,25 +7430,33 @@ M:AddToggle("Auto Finish Zone 5 (fix bug)",_G.dao,function(state)
             end
         end)
 ]]
-M:AddToggle("Speed Boat (semi work)",_G.Speed,function(value) -- state
-_G.Speed = Value
-end)
-            
-spawn(function()
-game:GetService("RunService").RenderStepped:Connect(function()
-if _G.Speed then
-pcall(function()
-for _,v in next, game.Workspace.Boats.PirateBrigade:GetDescendants() do
-if v.Name:find("VehicleSeat") then
-v.MaxSpeed = 300
-end
-end
-end)
-end
-end)
+SNt:AddToggle("Speed Boat",_G.IncreaseBoatSpeed,function(value) -- state
+    _G.IncreaseBoatSpeed = value
 end)
 
-    M:AddToggle("Auto Rough Sea (auto kill all)",_G.BiirTrax,function(state)
+spawn(function()
+    while wait() do 
+        pcall(function()
+            local vehicleSeats = {}
+            for i, v in pairs(game.Workspace.Boats:GetDescendants()) do
+                if v:IsA("VehicleSeat") then
+                    table.insert(vehicleSeats, v)
+                end
+            end
+            if _G.IncreaseBoatSpeed then
+                for _, v in pairs(vehicleSeats) do
+                    v.MaxSpeed = 350
+                end
+            else
+                for _, v in pairs(vehicleSeats) do
+                    v.MaxSpeed = 150
+                end
+            end
+        end)
+    end
+end)
+
+    SNt:AddToggle("Auto Sail Rough Sea",_G.BiirTrax,function(state)
     if state then
         _G.BiirTrax = true
     else
@@ -7499,7 +7618,85 @@ spawn(function()
     end
 end)
 
+SNt:AddSeperator("Frozen & Kitsune")
 
+   SNt:AddToggle("Teleport Frozen Dimension",_G.AutoFrozenDimension,function(value)
+    _G.AutoFrozenDimension = value
+    StopTween(_G.AutoFrozenDimension)
+    end)
+    
+    SNt:AddToggle("Teleport Kitsune Island",_G.TeleportKitsune,function(value)
+     _G.TeleportKitsune = value
+             StopTween(_G.TeleportKitsune)
+         end) 
+          spawn(function()
+            while wait() do
+                if _G.AutoFrozenDimension then
+                    pcall(function()
+                        if game.Workspace._WorldOrigin.Locations:FindFirstChild('Frozen Dimension') then
+                            topos(game.Workspace._WorldOrigin.Locations:FindFirstChild('Frozen Dimension').HumanoidRootPart.CFrame * CFrame.new(0,500,-100))
+                        end
+                    end)
+                end
+            end
+        end)
+        
+        spawn(function()
+         while wait() do
+             if _G.TeleportKitsune then
+                 if game:GetService("Workspace").Map:FindFirstChild("KitsuneIsland") then
+                     topos(game.Workspace.Map.KitsuneIsland.ShrineActive.NeonShrinePart.CFrame * CFrame.new(0,0,10))
+                 end
+             end
+         end
+     end)
+    
+     SNt:AddToggle("Auto Collect Azure Ember",_G.CollectAzure,function(value)
+         _G.CollectAzure = value
+         end)
+    
+         spawn(function()
+             while wait() do
+                 if _G.CollectAzure then
+                     pcall(function()
+                         if game:GetService("Workspace"):FindFirstChild("AttachedAzureEmber") then
+                             fastpos(game:GetService("Workspace"):WaitForChild("EmberTemplate"):FindFirstChild("Part").CFrame)
+                         end
+                     end)
+                 end
+             end
+         end)
+    
+     _G.SetToTradeAureEmber = 20
+     SNt:AddSlider("Set Trade Azure Ember", 10, 25, _G.SetToTradeAureEmber, function(v)
+         _G.SetToTradeAureEmber = v
+     end)
+    
+     SNt:AddToggle("Auto Trade Azure Ember", _G.TradeAureEmber, function(state)
+         _G.TradeAureEmber = state
+         end)
+         function GetCountMaterials(MaterialName)
+             local Inventory = game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("getInventory")
+             for i, v in pairs(Inventory) do
+                 if v.Name == MaterialName then
+                     return v["Count"]
+                 end
+             end
+         end
+    
+         spawn(function()
+             while wait() do
+                 if _G.TradeAureEmber then
+                     pcall(function()
+                         local AzureAvilable = GetCountMaterials("Azure Ember")
+                         if AzureAvilable >= _G.SetToTradeAureEmber then
+                             game:GetService("ReplicatedStorage").Modules.Net:FindFirstChild("RF/KitsuneStatuePray"):InvokeServer()
+                             game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("KitsuneStatuePray")
+                         end
+                     end)
+                 end
+             end
+         end)
 
 
 
