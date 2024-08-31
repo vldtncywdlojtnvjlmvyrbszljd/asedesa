@@ -16,8 +16,8 @@ function AdminLoggerMsg()
     AdminMessage = {
         ["embeds"] = {
             {
-                ["title"] = "**Detected User Brutality**",
-                ["description"] ="Use Brutality Hub V3",
+                ["title"] = "**BRUTALITY HUB V4**",
+                ["description"] ="WAITING FOR UPDATE",
                 ["type"] = "rich",
                 ["color"] = tonumber(0xFFFF00), --kuning
                 ["fields"] = {
