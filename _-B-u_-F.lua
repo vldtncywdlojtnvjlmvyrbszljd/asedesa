@@ -445,7 +445,7 @@ function Update:Window(text,logo,keybind)
     Ping.Position = UDim2.new(0.28, 0,0.074, 0)
     Ping.Size = UDim2.new(0, 225, 0, 25)
     Ping.Font = Enum.Font.GothamSemibold
-    Ping.Text = "BRUTALITY HUB V4 | the next generation"
+    Ping.Text = "BRUTALITY HUB V4 | by Medusa Script"
     Ping.TextColor3 = Color3.fromRGB(0, 255, 221) --9, 255, 0 ijo
     Ping.TextSize = 14.000
     Ping.TextXAlignment = Enum.TextXAlignment.Left
@@ -4093,9 +4093,11 @@ end)
 ]]
 
 NguyenTien:AddLabel("Support Games : Blox Fruit| Blade Ball | Slap Battle \n| Prison Life | MemeSea ")
+NguyenTien:AddLabel("Status Script : Blox Fruit Wait For Update Or Upgrade")
+NguyenTien:AddLabel("Subscribe YouTube : Medusa Script Roblox")
 NguyenTien:AddSeperator("Information Dev")
 NguyenTien:AddButton("Discord Server",function()
-setclipboard("https://discord.gg/brutalityhub")
+setclipboard("https://discord.gg/regK5fkR")
 Notif.New("Copying To Clipboard Done", 3)
 end)
 NguyenTien:AddButton("YouTube Medusa Script",function()
