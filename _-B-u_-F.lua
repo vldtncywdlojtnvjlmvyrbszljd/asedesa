@@ -445,7 +445,7 @@ function Update:Window(text,logo,keybind)
     Ping.Position = UDim2.new(0.28, 0,0.074, 0)
     Ping.Size = UDim2.new(0, 225, 0, 25)
     Ping.Font = Enum.Font.GothamSemibold
-    Ping.Text = "WAIT FOR UPDATE | SEDANG UPDATE"
+    Ping.Text = "BRUTALITY HUB V4 | the next generation"
     Ping.TextColor3 = Color3.fromRGB(0, 255, 221) --9, 255, 0 ijo
     Ping.TextSize = 14.000
     Ping.TextXAlignment = Enum.TextXAlignment.Left
@@ -4091,9 +4091,9 @@ UpdateClient1()
 end
 end)
 ]]
-NguyenTien:AddLabel("🚨Alert : Please be patient, the Brutality Hub V4 script\n is currently under maintenance due to an error.")
-NguyenTien:AddLabel("Use Game : Blox Fruit| Blade Ball \n|Slap Battle |Prison Life |MemeSea ")
-NguyenTien:AddSeperator("Information")
+
+NguyenTien:AddLabel("Support Games : Blox Fruit| Blade Ball | Slap Battle \n| Prison Life | MemeSea ")
+NguyenTien:AddSeperator("Information Dev")
 NguyenTien:AddButton("Discord Server",function()
 setclipboard("https://discord.gg/brutalityhub")
 Notif.New("Copying To Clipboard Done", 3)
@@ -4113,7 +4113,6 @@ end)
 
 Qwe:AddSeperator("Status Server & Player")
 
-Qwe:AddLine()
 local Time1 = Qwe:AddLabel("Run Time Script")
 function UpdateTime()
 local GameTime = math.floor(workspace.DistributedGameTime+0.5)
@@ -4201,10 +4200,10 @@ local locallv = Qwe:AddLabel("Level :")
 
 Qwe:AddSeperator("Status Train V4")
 
-local bL = Qwe:AddLabel("Ancient One Status : " .. tostring(CheckAcientOneStatus()))
+local bL = Qwe:AddLabel("Ancient One : " .. tostring(CheckAcientOneStatus()))
 local bPl = Qwe:AddLabel("Train v4 Status : " .. tostring(CheckAcientOneStatusTrain()))
 
-Qwe:AddLine()
+Qwe:AddSeperator("Status Island")
 if World3 then
     spawn(function()
         pcall(function()
@@ -4249,9 +4248,9 @@ spawn(function()
 end
     Froz3nIsland = Qwe:AddLabel("Frozen Island : Only Third Sea")
 
-Qwe:AddLine()
-local FMz = Qwe:AddLabel("Full Moon Phase : Only Third Sea")
- if World3 then
+    Qwe:AddSeperator("Status Moon")
+local FMz = Qwe:AddLabel("Full Moon Phase : ")
+ if World3 or world2 or world2 then
  task.spawn(function()
          while task.wait() do
              pcall(function()
@@ -4272,11 +4271,11 @@ local FMz = Qwe:AddLabel("Full Moon Phase : Only Third Sea")
          end
  end)
 end
-local FullM00n = Qwe:AddLabel("Moon Time : " .. function8() .. " | ".. CheckMoon() .. " | " .. function7())
+local FullM00n = Qwe:AddLabel("Time : " .. function8() .. " | ".. CheckMoon() .. " | " .. function7())
 
 spawn(function()
         while wait() do
-            FullM00n:Set("Moon Time : " .. function8() .. " | ".. CheckMoon() .. " | " .. function7())
+            FullM00n:Set("Time : " .. function8() .. " | ".. CheckMoon() .. " | " .. function7())
                 end
             end)
 
@@ -4422,6 +4421,46 @@ spawn(function()
             end)
 
 ---- Teks halaman utama
+Main:AddSeperator("Redeem Codes")
+    
+    local x2Code = {
+        "KITTGAMING",
+        "ENYU_IS_PRO",
+        "FUDD10",
+        "BIGNEWS",
+        "THEGREATACE",
+        "SUB2GAMERROBOT_EXP1",
+        "STRAWHATMAIME",
+        "SUB2OFFICIALNOOBIE",
+        "SUB2NOOBMASTER123",
+        "SUB2DAIGROCK",
+        "AXIORE",
+        "TANTAIGAMIMG",
+        "STRAWHATMAINE",
+        "JCWK",
+        "FUDD10_V2",
+        "SUB2FER999",
+        "MAGICBIS",
+        "TY_FOR_WATCHING",
+        "STARCODEHEO"
+    }
+    
+    Main:AddButton("Redeem All Codes",function()
+        function RedeemCode(value)
+            game:GetService("ReplicatedStorage").Remotes.Redeem:InvokeServer(value)
+        end
+        for i,v in pairs(x2Code) do
+            RedeemCode(v)
+        end
+    end)
+    
+    Main:AddDropdown("Selected Codes Reset stat",{"NOOB_REFUND","SUB2GAMERROBOT_RESET1","Sub2UncleKizaru"},function(value)
+        _G.CodeSelect = value
+    end)
+    
+    Main:AddButton("Redeem Code (Selected Codes)",function()
+        game:GetService("ReplicatedStorage").Remotes.Redeem:InvokeServer(_G.CodeSelect)
+    end)
 Main:AddSeperator("Farm Settings")
 
 local WeaponList = {"Melee","Sword","Fruit","Gun"}
@@ -4632,9 +4671,77 @@ Main:AddToggle("Super Fast Attack ",true,function(value)
         _G.FastAttack = value
     end)      
 
-   Main:AddSeperator("Farm Level,...")
+   Main:AddSeperator("Farm Level")
+
+   Main:AddToggle("Auto Farm Kaitun",false,function(value)
+    _G.AutoFarm = value
+    _G.SelectWeapon = "Combat"
+    _G.Auto_Stats_Kaitun = value
+    _G.AutoSuperhuman = value
+    _G.AutoSecondSea = value
+    _G.AutoThirdSea = value
+    _G.AutoBuyLegendarySword = value
+    _G.AutoStoreFruit = value
+    _G.Random_Auto = value
+    _G.BuyAllAib = value
+    _G.BuyAllSword = value
+    function RedeemCode(value)
+        game:GetService("ReplicatedStorage").Remotes.Redeem:InvokeServer(value)
+    end
+    for i,v in pairs(x2Code) do
+        RedeemCode(v)
+   StopTween(_G.AutoFarm)
+    end
+ end)
+ 
+ spawn(function()
+     while wait() do
+         if _G.BuyAllSword then
+             pcall(function()
+                 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Cutlass")
+                 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Katana")
+                 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Iron Mace")
+                 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Duel Katana")
+                 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Triple Katana")
+                 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Pipe")
+                 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Bisento")
+                 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Dual-Headed Blade")
+                 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyItem","Soul Cane")
+                 if _G.BuyHop then
+                     wait(10)
+                     Hop()
+                 end
+             end)
+         end 
+     end
+ end)
+ 
+ spawn(function()
+     while wait() do
+         if _G.BuyAllAib then
+             pcall(function()
+                 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("KenTalk","Buy")
+                 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyHaki","Geppo")
+                 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyHaki","Buso")
+                 game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyHaki","Soru")
+                 if _G.HopBuy then
+                     wait(10)
+                     Hop()
+                 end
+             end)
+         end 
+     end
+ end)
+ 
+if World1 then
+ tableMon = {"Bandit","Monkey","Gorilla","Pirate","Brute","Desert Bandit","Desert Officer","Snow Bandit","Snowman","Chief Petty Officer","Sky Bandit","Dark Master","Toga Warrior","Gladiator","Military Soldier","Military Spy","Fishman Warrior","Fishman Commando","God's Guard","Shanda","Royal Squad","Royal Soldier","Galley Pirate","Galley Captain"}
+elseif World2 then
+ tableMon = {"Raider","Mercenary","Swan Pirate","Factory Staff","Marine Lieutenant","Marine Captain","Zombie","Vampire","Snow Trooper","Winter Warrior","Lab Subordinate","Horned Warrior","Magma Ninja","Lava Pirate","Ship Deckhand","Ship Engineer","Ship Steward","Ship Officer","Arctic Warrior","Snow Lurker","Sea Soldier","Water Fighter"}
+elseif World3 then
+ tableMon = {"Pirate Millionaire","Dragon Crew Warrior","Dragon Crew Archer","Female Islander","Giant Islander","Marine Commodore","Marine Rear Admiral","Fishman Raider","Fishman Captain","Forest Pirate","Mythological Pirate","Jungle Pirate","Musketeer Pirate","Reborn Skeleton","Living Zombie","Demonic Soul","Posessed Mummy","Peanut Scout","Peanut President","Ice Cream Chef","Ice Cream Commander","Cookie Crafter","Cake Guard","Baking Staff","Head Baker","Cocoa Warrior","Chocolate Bar Battler","Sweet Thief","Candy Rebel","Candy Pirate","Snow Demon","Isle Outlaw","Island Boy","Sun-kissed Warrior","Isle Champion"}
+end
    
-    Main:AddToggle("Farm Level",_G.AutoFarm,function(value)
+    Main:AddToggle("Auto Farm Level",_G.AutoFarm,function(value)
         _G.AutoFarm = value
         StopTween(_G.AutoFarm)
         saveSettings()
@@ -5926,14 +6033,14 @@ end)
         pcall(function()
             while wait() do
     if game.Workspace._WorldOrigin.Locations:FindFirstChild('Mirage Island') then
-    Mirragecheck:Set('✅: Mystic Island Spawning')
+    Mirragecheck:Set('Mirage Island : 🟢')
     else
-      Mirragecheck:Set('❌: Mystic Island Not Found ' )end
+      Mirragecheck:Set('Mirage Island : 🔴')end
             end
         end)
 end)
-
-Mirragecheck = SNt:AddLabel("")
+end --1 masalah done
+Mirragecheck = SNt:AddLabel("Mirage Island : Only Third Sea")
 SNt:AddToggle("Teleport Mystic Island",_G.AutoMysticIsland,function(value)
         _G.AutoMysticIsland = value
         StopTween(_G.AutoMysticIsland)
@@ -5952,7 +6059,60 @@ SNt:AddToggle("Teleport Mystic Island",_G.AutoMysticIsland,function(value)
                         end
                     end)
                 end)
-            end
+            --end
+SNt:AddToggle("Auto Farm Chest Mirage island",_G.AutoChestMirage,function(value)
+    _G.AutoChestMirage = value
+    StopTween(_G.AutoChestMirage)
+        end)  
+    --ByOakkXHub
+        _G.MagnitudeAdd = 0
+        spawn(function()
+                   while wait() do 
+                       if _G.AutoChestMirage then
+                           for i,v in pairs(game:GetService("Workspace"):GetChildren()) do 
+                               if v.Name:find("FragChest") then
+                                   if game:GetService("Workspace"):FindFirstChild(v.Name) then
+                                       if (v.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 5000+_G.MagnitudeAdd then
+                                           repeat wait()
+                                               if game:GetService("Workspace"):FindFirstChild(v.Name) then
+                                                   topos(v.CFrame)
+                                               end
+                                           until _G.AutoChestMirage == false or not v.Parent
+                                           topos(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
+                                           _G.MagnitudeAdd = _G.MagnitudeAdd+1500
+                                           break
+                                       end
+                                   end
+                               end
+                           end
+                       end
+                   end
+               end)
+               
+               
+               _G.MagnitudeAdd = 0
+               spawn(function()
+                   while wait() do 
+                       if _G.ChestBypass then
+                           for i,v in pairs(game:GetService("Workspace"):GetChildren()) do 
+                               if v.Name:find("Chest") then
+                                   if game:GetService("Workspace"):FindFirstChild(v.Name) then
+                                       if (v.Position - game.Players.LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 5000+_G.MagnitudeAdd then
+                                           repeat wait()
+                                               if game:GetService("Workspace"):FindFirstChild(v.Name) then
+                                                   TP3(v.CFrame)
+                                               end
+                                           until AutoFarmChest == false or not v.Parent
+                                           topos(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
+                                           _G.MagnitudeAdd = _G.MagnitudeAdd+1500
+                                           break
+                                       end
+                                   end
+                               end
+                           end
+                       end
+                   end
+               end)
 
             SNt:AddButton("Teleport Advanced Fruit Dealer", function()
                 TweenNpc()
@@ -6113,7 +6273,7 @@ spawn(function()
     end
 end)
 
-SNt:AddToggle("Auto Drive Boat",AutoW,function(W)
+SNt:AddToggle("Auto Drive Press W",AutoW,function(W)
     AutoW = W
     end)
     spawn(function()
@@ -10455,7 +10615,7 @@ end)
         end)
        end)
        
-       LegendSwords = M:AddLabel("StatusCheck")
+       LegendSwords = M:AddLabel("Sword Not Ready : 🔴")
     
     M:AddToggle("Buy Legendary Sword",_G.AutoBuyLegendarySword,function(value)
         _G.AutoBuyLegendarySword = value
@@ -10494,6 +10654,22 @@ end)
     end)
     
     M:AddSeperator("Enchancement Colour")
+
+    local KuyKoben = game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer("ColorsDealer", "1")
+ 
+spawn(function()
+ pcall(function()
+     while wait() do
+         if game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("CommF_"):InvokeServer("ColorsDealer", "1") then
+             ColorHaki:Set(KuyKoben)
+         else
+             ColorHaki:Set("Haki Dealer Not Found")
+         end
+     end
+ end)
+end)
+
+ColorHaki = M:AddLabel("Status Dealer Haki")
     
     M:AddToggle("Buy Enchancement Colour",_G.AutoBuyEnchancementColour,function(value)
         _G.AutoBuyEnchancementColour = value
@@ -14630,47 +14806,7 @@ Misc:AddButton("Kaitun Cap", function(value)
         HyperCahaya(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
         _G.Clip = false
     end)
-    
-    Misc:AddSeperator("Codes")
-    
-    local x2Code = {
-        "KITTGAMING",
-        "ENYU_IS_PRO",
-        "FUDD10",
-        "BIGNEWS",
-        "THEGREATACE",
-        "SUB2GAMERROBOT_EXP1",
-        "STRAWHATMAIME",
-        "SUB2OFFICIALNOOBIE",
-        "SUB2NOOBMASTER123",
-        "SUB2DAIGROCK",
-        "AXIORE",
-        "TANTAIGAMIMG",
-        "STRAWHATMAINE",
-        "JCWK",
-        "FUDD10_V2",
-        "SUB2FER999",
-        "MAGICBIS",
-        "TY_FOR_WATCHING",
-        "STARCODEHEO"
-    }
-    
-    Misc:AddButton("Redeem All Codes",function()
-        function RedeemCode(value)
-            game:GetService("ReplicatedStorage").Remotes.Redeem:InvokeServer(value)
-        end
-        for i,v in pairs(x2Code) do
-            RedeemCode(v)
-        end
-    end)
-    
-    Misc:AddDropdown("Selected Codes Reset stat",{"NOOB_REFUND","SUB2GAMERROBOT_RESET1","Sub2UncleKizaru"},function(value)
-        _G.CodeSelect = value
-    end)
-    
-    Misc:AddButton("Redeem Code (Selected Codes)",function()
-        game:GetService("ReplicatedStorage").Remotes.Redeem:InvokeServer(_G.CodeSelect)
-    end)
+--tadinya tempat redeem code
     
     Misc:AddSeperator("State")
     
