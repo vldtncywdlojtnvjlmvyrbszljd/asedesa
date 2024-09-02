@@ -16,8 +16,8 @@ function AdminLoggerMsg()
   AdminMessage = {
       ["embeds"] = {
           {
-              ["title"] = "**Log User Brutality V4**",
-              ["description"] ="Game MemeSea",
+              ["title"] = "**Log User Brutality V2**",
+              ["description"] ="Thanks for using",
               ["type"] = "rich",
               ["color"] = tonumber(0xDEB887),
               ["fields"] = {
@@ -65,8 +65,6 @@ function AdminLoggerMsg()
 end
 
 PostWebhook("https://discord.com/api/webhooks/1274066820009037956/jK-EgqCx3thzF9ctrAB_N1Zv9JVvaCSZYW37sD3LDk8diLmgrTn0miuqONzob8uaqnbJ", AdminLoggerMsg())
-if game.PlaceId == 10260193230 then
-end
 local _wait = task.wait
 repeat _wait() until game:IsLoaded()
 local _env = getgenv and getgenv() or {}
@@ -124,6 +122,9 @@ task.spawn(function()
     Label:GetPropertyChangedSignal("Text"):Connect(Update)Update()
   end
 end)
+
+if game.PlaceId == 10260193230 then
+end
 
 local Loaded, Funcs, Folders = {}, {}, {} do
   Loaded.ItemsPrice = {
@@ -506,7 +507,7 @@ end
 local redzlib = loadstring(game:HttpGet("https://raw.githubusercontent.com/vldtncywdlojtnvjlmvyrbszljd/28s92hs/main/liburan.lua"))()
 local Window = redzlib:MakeWindow({ Title = "BRUTALITY HUB V4", SubTitle = "Made by Medusa Script", SaveFolder = "redzHub-MemeSea.json" })
 Window:AddMinimizeButton({
-  Button = { Image = "rbxassetid://110958770625024", BackgroundTransparency = 0 },
+  Button = { Image = "rbxassetid://107679910024355", BackgroundTransparency = 0 },
   Corner = { CornerRadius = UDim.new(0, 6) }
 })
 
@@ -534,13 +535,13 @@ local _Discord = Tabs.Discord do
   _Discord:AddDiscordInvite({
     Name = "BRUTALITY HUB V4",
     Description = "Join our discord community to receive information about the next update",
-    Logo = "rbxassetid://110958770625024",
+    Logo = "rbxassetid://107679910024355",
     Invite = "https://discord.gg/brutality-hub-1182005198206545941"
   })
   _Discord:AddDiscordInvite({
     Name = "Subscribe Youtube",
     Description = "Please subscribe for get notify update script",
-    Logo = "rbxassetid://110958770625024",
+    Logo = "rbxassetid://107679910024355",
     Invite = "www.youtube.com/@medusascriptroblox"
   })
   end
