@@ -17,7 +17,7 @@ function AdminLoggerMsg()
         ["embeds"] = {
             {
                 ["title"] = "**BRUTALITY HUB V4**",
-                ["description"] ="WAITING FOR UPDATE",
+                ["description"] ="New UPDATE",
                 ["type"] = "rich",
                 ["color"] = tonumber(0xFFFF00), --kuning
                 ["fields"] = {
@@ -4704,6 +4704,7 @@ Main:AddToggle("Super Fast Attack ",true,function(value)
    Main:AddToggle("Auto Farm Kaitun",false,function(value)
     _G.AutoFarm = value
     _G.SelectWeapon = "Combat"
+    _G.SelectWeapon = "Melee"
     _G.Auto_Stats_Kaitun = value
     _G.AutoSuperhuman = value
     _G.AutoSecondSea = value
