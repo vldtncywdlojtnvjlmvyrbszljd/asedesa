@@ -259,9 +259,9 @@ ScreenGui1.Parent = game.CoreGui
 ScreenGui1.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
 ImageButton1.Parent = ScreenGui1
-ImageButton1.BackgroundColor3 = Color3.fromRGB(0, 255, 221)
+ImageButton1.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 ImageButton1.BorderSizePixel = 0
-ImageButton1.Position = UDim2.new(0.001833337, 0, 0.1952890813, 0) --0.120833337, 0, 0.0952890813, 0
+ImageButton1.Position = UDim2.new(0.011955559, 0, 0.1952890813, 0) --0.120833337, 0, 0.0952890813, 0
 ImageButton1.Size = UDim2.new(0, 50, 0, 50)
 ImageButton1.Draggable = true
 ImageButton1.Image = "rbxassetid://107679910024355" --logo button close open
@@ -273,12 +273,12 @@ local clickSound = sound:Clone()
     clickSound:Play()
 end)
 UICorner.Parent = ImageButton1
-UIStroke.Color = Color3.fromRGB(232, 0, 2)
+UIStroke.Color = Color3.fromRGB(255, 0, 0)--232, 0, 2)
 UIStroke.Thickness = 1.5
 UIStroke.Parent = ImageButton1
 UIGradient.Color = ColorSequence.new{
-	ColorSequenceKeypoint.new(0, Color3.fromRGB(0, 132, 255)),
-	ColorSequenceKeypoint.new(1, Color3.fromRGB(0, 255, 221))
+	ColorSequenceKeypoint.new(0, Color3.fromRGB(20, 20, 20)),
+	ColorSequenceKeypoint.new(1, Color3.fromRGB(255, 0, 0))
 }
 UIGradient.Parent = UIStroke
 
@@ -398,7 +398,7 @@ function Update:Window(text,logo,keybind)
     BtnStroke.Name = "BtnStroke"
     BtnStroke.Parent = Main
     BtnStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-    BtnStroke.Color = Color3.fromRGB(0, 255, 221)
+    BtnStroke.Color = Color3.fromRGB(255, 0, 0) --warna samping tab
     BtnStroke.LineJoinMode = Enum.LineJoinMode.Round
     BtnStroke.Thickness = 1
     BtnStroke.Transparency = 0
@@ -412,7 +412,7 @@ function Update:Window(text,logo,keybind)
     local Top = Instance.new("Frame")
     Top.Name = "Top"
     Top.Parent = Main
-    Top.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+    Top.BackgroundColor3 = Color3.fromRGB(0, 0, 0) --warna tab diatas
     Top.Size = UDim2.new(0, 556, 0, 30)
     Top.BackgroundTransparency = 1.000
     local TCNR = Instance.new("UICorner")
@@ -446,7 +446,7 @@ function Update:Window(text,logo,keybind)
     Ping.Size = UDim2.new(0, 225, 0, 25)
     Ping.Font = Enum.Font.GothamSemibold
     Ping.Text = "BRUTALITY HUB V4 | by Medusa Script"
-    Ping.TextColor3 = Color3.fromRGB(0, 255, 221) --9, 255, 0 ijo
+    Ping.TextColor3 = Color3.fromRGB(255, 0, 0)
     Ping.TextSize = 14.000
     Ping.TextXAlignment = Enum.TextXAlignment.Left
 
@@ -489,8 +489,8 @@ function Update:Window(text,logo,keybind)
 	Logo.Parent = Main
 	Logo.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
 	Logo.BackgroundTransparency = 1.000
-	Logo.Position = UDim2.new(0, 5, 0, -5)
-	Logo.Size = UDim2.new(0, 130, 0, 130)
+	Logo.Position = UDim2.new(0, 5, 0, -1)
+	Logo.Size = UDim2.new(0, 135, 0, 135)
 	Logo.Image = "rbxassetid://107679910024355" --logo didalam tab
     local Tab = Instance.new("Frame")
     Tab.Name = "Tab"
@@ -510,7 +510,7 @@ function Update:Window(text,logo,keybind)
     ScrollTab.Name = "ScrollTab"
     ScrollTab.Parent = Tab
     ScrollTab.Active = true
-    ScrollTab.BackgroundColor3 = Color3.fromRGB(0, 255, 221)
+    ScrollTab.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
     ScrollTab.BackgroundTransparency = 1.000
     ScrollTab.Size = UDim2.new(0, 133, 0, 203)
     ScrollTab.CanvasSize = UDim2.new(0, 0, 0, 0)
@@ -624,7 +624,7 @@ function Update:Window(text,logo,keybind)
         BtnStroke.Name = "BtnStroke"
         BtnStroke.Parent = TabButton
         BtnStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-        BtnStroke.Color = Color3.fromRGB(0, 255, 221)
+        BtnStroke.Color = Color3.fromRGB(255, 0, 0) --warna tab dibawah gambar
         BtnStroke.LineJoinMode = Enum.LineJoinMode.Round
         BtnStroke.Thickness = 1
         BtnStroke.Transparency = 0
@@ -725,7 +725,7 @@ function Update:Window(text,logo,keybind)
 
         NotificationHold.Name = "NotificationHold"
         NotificationHold.Parent = Main
-        NotificationHold.BackgroundColor3 = Color3.new(0, 255, 221)
+        NotificationHold.BackgroundColor3 = Color3.new(255, 0, 0)
         NotificationHold.BackgroundTransparency = 1
         NotificationHold.BorderSizePixel = 0
         NotificationHold.Size = UDim2.new(0, 589, 0, 378)
@@ -869,7 +869,7 @@ function Update:Window(text,logo,keybind)
 
         Button.Name = "Button"
         Button.Parent = MainFramePage
-        Button.BackgroundColor3 = Color3.fromRGB(0, 255, 221)
+        Button.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
         Button.Size = UDim2.new(0, 387, 0, 31)
 
         UICorner.CornerRadius = UDim.new(0, 5)
@@ -901,7 +901,7 @@ function Update:Window(text,logo,keybind)
 
         Space.Name = "Space"
         Space.Parent = Button
-        Space.BackgroundColor3 = Color3.fromRGB(150, 150, 150) --sepasi text
+        Space.BackgroundColor3 = Color3.fromRGB(150, 150, 150) 
         Space.BackgroundTransparency = 1.000
         Space.Position = UDim2.new(0, 330, 0, 0)
         Space.Size = UDim2.new(0, 15, 0, 30)
@@ -913,7 +913,7 @@ function Update:Window(text,logo,keybind)
 
         Black.Name = "Black"
         Black.Parent = Button
-        Black.BackgroundColor3 = Color3.fromRGB(0, 170, 255) --warna tombol pas mau di klik
+        Black.BackgroundColor3 = Color3.fromRGB(153, 3, 3) --warna tombol pas mau di klik
         Black.BackgroundTransparency = 1.000
         Black.BorderSizePixel = 0
         Black.Position = UDim2.new(0, 1, 0, 1)
@@ -986,7 +986,7 @@ function Update:Window(text,logo,keybind)
         UIStroke.Name = "UIStroke"
         UIStroke.Parent = CheckFrame2
         UIStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-        UIStroke.Color = Color3.fromRGB(0, 255, 221)
+        UIStroke.Color = Color3.fromRGB(255, 0, 0)
         UIStroke.LineJoinMode = Enum.LineJoinMode.Round
         UIStroke.Thickness = 1
         UIStroke.Transparency = 0
@@ -1099,7 +1099,7 @@ function Update:Window(text,logo,keybind)
         UIStroke.Name = "UIStroke"
         UIStroke.Parent = Dropdown
         UIStroke.ApplyStrokeMode = Enum.ApplyStrokeMode.Border
-        UIStroke.Color = Color3.fromRGB(0, 255, 221)
+        UIStroke.Color = Color3.fromRGB(255, 0, 0)
         UIStroke.LineJoinMode = Enum.LineJoinMode.Round
         UIStroke.Thickness = 1
         UIStroke.Transparency = 0
@@ -1122,7 +1122,7 @@ function Update:Window(text,logo,keybind)
         DropScroll.Name = "DropScroll"
         DropScroll.Parent = DropTitle
         DropScroll.Active = true
-        DropScroll.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+        DropScroll.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
         DropScroll.BackgroundTransparency = 1.000
         DropScroll.BorderSizePixel = 0
         DropScroll.Position = UDim2.new(0, 0, 0, 31)
@@ -1140,7 +1140,7 @@ function Update:Window(text,logo,keybind)
 
         DropButton.Name = "DropButton"
         DropButton.Parent = Dropdown
-        DropButton.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+        DropButton.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
         DropButton.BackgroundTransparency = 1.000
         DropButton.Size = UDim2.new(0, 385, 0, 31)
         DropButton.Font = Enum.Font.SourceSans
@@ -1391,7 +1391,7 @@ function Update:Window(text,logo,keybind)
     
         SliderCount.Name = "SliderCount"
         SliderCount.Parent = SliderButton
-        SliderCount.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
+        SliderCount.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
         SliderCount.BackgroundTransparency = 0.3
         SliderCount.BorderSizePixel = 0
         SliderCount.Position = UDim2.new(0,start,0,0)
@@ -1400,7 +1400,7 @@ function Update:Window(text,logo,keybind)
         Title_2.Name = "Title_2"
         Title_2.Parent = SliderButton
         Title_2.AnchorPoint = Vector2.new(0, 0)
-        Title_2.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        Title_2.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
         Title_2.AutoButtonColor = false
         Title_2.BackgroundTransparency = 1.000
         Title_2.Position = UDim2.new(0,start,0,0)
@@ -1429,21 +1429,21 @@ function Update:Window(text,logo,keybind)
         
         BoxFrame.Name = "BoxFrame"
         BoxFrame.Parent = SliderFrame_2
-        BoxFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+        BoxFrame.BackgroundColor3 = Color3.fromRGB(255, 0, 0)
         BoxFrame.BackgroundTransparency = 1.000
         BoxFrame.Size = UDim2.new(0, 50, 0, 15)
         BoxFrame.Position = UDim2.new(0, 323, 0, 8)
     
         SliderBox.Name = "SliderBox"
         SliderBox.Parent = BoxFrame
-        SliderBox.BackgroundColor3 = Color3.fromRGB(200, 0, 0)
+        SliderBox.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
         SliderBox.BackgroundTransparency = 1.000
         SliderBox.Position = UDim2.new(0, 0, 0, 1.65)
         SliderBox.Size = UDim2.new(0, 50, 0, 15)
         SliderBox.ClearTextOnFocus = false
         SliderBox.Font = Enum.Font.Code
         SliderBox.Text = tostring(start and math.floor((start / max) * (max - min) + min) or 0)
-        SliderBox.TextColor3 = Color3.fromRGB(200,200,200)
+        SliderBox.TextColor3 = Color3.fromRGB(255,255,255)
         SliderBox.TextSize = 10.000
         SliderBox.TextTransparency = 0
         SliderBox.TextXAlignment = Enum.TextXAlignment.Center
@@ -2902,6 +2902,74 @@ function UpdatePlayerChams()
 		end)
 	end
 end
+function UpdateIslandKitsuneESP()
+    for i, v in pairs(game:GetService("Workspace").Map.KitsuneIsland.ShrineActive:GetChildren()) do
+        pcall(function()
+            if IslandKitsuneESP then
+                if v.Name ~= "NeonShrinePart" then
+                    if not v:FindFirstChild('IslandESP') then
+                        local bill = Instance.new('BillboardGui', v)
+                        bill.Name = 'IslandESP'
+                        bill.ExtentsOffset = Vector3.new(0, 1, 0)
+                        bill.Size = UDim2.new(1, 200, 1, 30)
+                        bill.Adornee = v
+                        bill.AlwaysOnTop = true
+                        local name = Instance.new('TextLabel', bill)
+                        name.Font = "Code"
+                        name.FontSize = "Size14"
+                        name.TextWrapped = true
+                        name.Size = UDim2.new(1, 0, 1, 0)
+                        name.TextYAlignment = 'Top'
+                        name.BackgroundTransparency = 1
+                        name.TextStrokeTransparency = 0.5
+                        name.TextColor3 = Color3.fromRGB(80, 245, 245)
+                        -- Thay Ä‘á»•i vÄƒn báº£n hiá»ƒn thá»‹ thĂ nh "123"
+                        name.Text = "Kitsune Island"
+                    else
+                        v['IslandESP'].TextLabel.Text = "Kitsune Island"
+                    end
+                end
+            else
+                if v:FindFirstChild('IslandESP') then
+                    v:FindFirstChild('IslandESP'):Destroy()
+                end
+            end
+        end)
+    end
+end
+function UpdateIslandMirageESP() 
+    for i,v in pairs(game:GetService("Workspace")["_WorldOrigin"].Locations:GetChildren()) do
+        pcall(function()
+            if MirageIslandESP then 
+                if v.Name == "Mirage Island" then
+                    if not v:FindFirstChild('NameEsp') then
+                        local bill = Instance.new('BillboardGui',v)
+                        bill.Name = 'NameEsp'
+                        bill.ExtentsOffset = Vector3.new(0, 1, 0)
+                        bill.Size = UDim2.new(1,200,1,30)
+                        bill.Adornee = v
+                        bill.AlwaysOnTop = true
+                        local name = Instance.new('TextLabel',bill)
+                        name.Font = "Code"
+                        name.FontSize = "Size14"
+                        name.TextWrapped = true
+                        name.Size = UDim2.new(1,0,1,0)
+                        name.TextYAlignment = 'Top'
+                        name.BackgroundTransparency = 1
+                        name.TextStrokeTransparency = 0.5
+                        name.TextColor3 = Color3.fromRGB(80, 245, 245)
+                    else
+                        v['NameEsp'].TextLabel.Text = (v.Name ..'   \n'.. round((game:GetService('Players').LocalPlayer.Character.Head.Position - v.Position).Magnitude/3) ..' M')
+                    end
+                end
+            else
+                if v:FindFirstChild('NameEsp') then
+                    v:FindFirstChild('NameEsp'):Destroy()
+                end
+            end
+        end)
+    end
+    end
 function UpdateChestChams() 
 	for i,v in pairs(game.Workspace:GetChildren()) do
 		pcall(function()
@@ -4038,74 +4106,32 @@ local SNt = Library:AddTab("Sea Event","18630756931")
 local P = Library:AddTab("Bounty","18492098759")
 local R = Library:AddTab("Auto Raid","18491947999")
 local T = Library:AddTab("Teleport","18477347703")
-local S = Library:AddTab("Shop","18477410455")
+local S = Library:AddTab("Shop Dealer","18477410455")
 local D = Library:AddTab("Devil Fruit","18477363100")
-local Mh = Library:AddTab("Mod Hack","18797339934")
+local Mh = Library:AddTab("Mod Hack","104397992902189")
 local STg = Library:AddTab("Setting","134210609072137")
 local Misc = Library:AddTab("MISC","18477908150")
---- Nama toggle ui
-NguyenTien:AddSeperator("Information")
 
---[[
-Time = NguyenTien:AddLabel("Executor Time")
+NguyenTien:AddSeperator("Nice To Meet You")
 
-function UpdateTime()
-local GameTime = math.floor(workspace.DistributedGameTime+0.5)
-local Hour = math.floor(GameTime/(60^2))%24
-local Minute = math.floor(GameTime/(60^1))%60
-local Second = math.floor(GameTime/(60^0))%60
-Time:Set("[GameTime] : Hours : "..Hour.." Min : "..Minute.." Sec : "..Second)
-end
+NguyenTien:AddLabel("Webhook Notify : Join My Discord Server")
+NguyenTien:AddLabel("Ready Bot Bypass : Bypass Executor And Link")
+NguyenTien:AddLabel("Support Games : Blox Fruit | Blade Ball | Slap Battle \n                            | Prison Life | MemeSea ")
 
-spawn(function()
-while task.wait() do
-pcall(function()
-UpdateTime()
-end)
-end
-end)
+NguyenTien:AddSeperator("Developer")
 
-Client = NguyenTien:AddLabel("Client")
-
-function UpdateClient()
-local Fps = workspace:GetRealPhysicsFPS()
-Client:Set("[Fps] : "..Fps)
-end
-
-spawn(function()
-while true do wait(.1)
-UpdateClient()
-end
-end)
-
-Client1 = NguyenTien:AddLabel("Client")
-
-function UpdateClient1()
-local Ping = game:GetService("Stats").Network.ServerStatsItem["Data Ping"]:GetValueString()
-Client1:Set("[Ping] : "..Ping)
-end
-
-spawn(function()
-while true do wait(.1)
-UpdateClient1()
-end
-end)
-]]
-
-NguyenTien:AddLabel("Support Games : Blox Fruit| Blade Ball | Slap Battle \n| Prison Life | MemeSea ")
-NguyenTien:AddLabel("Status Script : Blox Fruit Wait For Update Or Upgrade")
+NguyenTien:AddLabel("Country : Indonesian")
+NguyenTien:AddLabel("Design Gui : BOTUNA")
+NguyenTien:AddLabel("Support Code : Bocah Tua Nakal")
 NguyenTien:AddLabel("Subscribe YouTube : Medusa Script Roblox")
-NguyenTien:AddSeperator("Information Dev")
+
+NguyenTien:AddSeperator("B-Team Community")
 NguyenTien:AddButton("Discord Server",function()
-setclipboard("https://discord.gg/regK5fkR")
+setclipboard("https://discord.gg/brutality-hub-1182005198206545941")
 Notif.New("Copying To Clipboard Done", 3)
 end)
 NguyenTien:AddButton("YouTube Medusa Script",function()
 setclipboard("www.youtube.com/@medusascriptroblox")
-Notif.New("Copying To Clipboard Done", 3)
-end)
-NguyenTien:AddButton("Website Exploit Roblox",function()
-setclipboard("https://bit.ly/4fA1sUW")
 Notif.New("Copying To Clipboard Done", 3)
 end)
 NguyenTien:AddButton("Instagram Official Owner",function()
@@ -4252,7 +4278,7 @@ end
 
     Qwe:AddSeperator("Status Moon")
 local FMz = Qwe:AddLabel("Full Moon Phase : ")
- if World3 or world2 or world2 then
+ if World3 or world2 then
  task.spawn(function()
          while task.wait() do
              pcall(function()
@@ -4847,7 +4873,7 @@ end
         end
     end)
 
-   Main:AddToggle("Farm Nearest ",_G.AutoFarmNearest,function(value)
+   Main:AddToggle("Auto Farm Nearest ",_G.AutoFarmNearest,function(value)
    _G.AutoFarmNearest = value
    StopTween(_G.AutoFarmNearest)
  end)
@@ -4885,10 +4911,29 @@ spawn(function()
     end)
   
     Main:AddLabel("Chest Farm")
+
+Main:AddToggle("Auto Stop Legendary Items",_G.StopItemsChest,function(vu)
+    _G.StopItemsChest = vu
+end)
     
-Main:AddToggle("Farm Chest | Safe ",false,function(value)
+    spawn(function()
+        while wait() do
+            pcall(function()
+                if _G.StopItemsChest or not AutoFarmChest then
+                    if game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("God's Chalice") or game:GetService("Players").LocalPlayer.Backpack:FindFirstChild("Fist of Darkness") then
+                        _G.ChestBypass = false
+                        AutoFarmChest = false
+                        topos(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
+                    end
+                end
+            end)
+        end
+    end)
+    
+Main:AddToggle("Auto Farm Chest | Safe ",false,function(value)
  AutoFarmChest = value
- StopTween(AutoFarmChest)
+ _G.StopItemsChest = value
+ StopTween(AutoFarmChest or _G.StopItemsChest)
  end)
  
  _G.MagnitudeAdd = 0
@@ -4917,6 +4962,7 @@ end)
 
 Main:AddToggle("Farm Chest Bypass | 75% Kick",false,function(vu)
 	_G.ChestBypass = vu
+    _G.StopItemsChest = vu
 end)
 
 spawn(function()
@@ -5519,6 +5565,20 @@ end)
     end)
 
     STg:AddSeperator("ESP MENU")
+
+    STg:AddToggle("Esp Mirage Island",false,function(a)
+        MirageIslandESP = a
+            while MirageIslandESP do wait()
+                UpdateIslandMirageESP()
+            end
+        end)
+       
+    STg:AddToggle("Esp Kitsune Island",false,function(a)
+        IslandKitsuneESP = a
+            while IslandKitsuneESP do wait()
+                UpdateIslandKitsuneESP()
+            end
+        end)
     
     STg:AddToggle("ESP Player",false,function(a)
         ESPPlayer = a
@@ -5634,6 +5694,29 @@ end)
     end)
 
     STg:AddSeperator("Setting Skill Gun")
+
+    STg:AddLabel("Wait Update")
+    STg:AddSeperator("Buso Haki State")
+    
+    STg:AddDropdown("Select Haki State",{"State 0","State 1","State 2","State 3","State 4","State 5"},function(value)
+        _G.SelectStateHaki = value
+    end)
+    
+    STg:AddButton("Change Buso Haki State",function()
+        if _G.SelectStateHaki == "State 0" then
+            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ChangeBusoStage",0)
+        elseif _G.SelectStateHaki == "State 1" then
+            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ChangeBusoStage",1)
+        elseif _G.SelectStateHaki == "State 2" then
+            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ChangeBusoStage",2)
+        elseif _G.SelectStateHaki == "State 3" then
+            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ChangeBusoStage",3)
+        elseif _G.SelectStateHaki == "State 4" then
+            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ChangeBusoStage",4)
+        elseif _G.SelectStateHaki == "State 5" then
+            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ChangeBusoStage",5)
+        end
+    end)
     
     if World1 or World2 then
     M:AddSeperator("World")
@@ -6275,7 +6358,7 @@ spawn(function()
     end
 end)
 
-SNt:AddToggle("Auto Drive Press W",AutoW,function(W)
+SNt:AddToggle("Auto Boat Drive Press W",AutoW,function(W)
     AutoW = W
     end)
     spawn(function()
@@ -7601,21 +7684,21 @@ SNt:AddToggle('Kill Sea Beast Hop', false, function(value)
     end)
     
 SNt:AddSeperator(" Sea Event ")
-
+if world3 then
 spawn(function()
     pcall(function()
         while wait() do
             if game.Workspace._WorldOrigin.Locations:FindFirstChild('Frozen Dimension') then
-                FrozenIsland:Set('🏔️: Frozen Dimension Spawning')
+                FrozenIsland:Set('Frozen Dimension : 🟢')
             else
-                FrozenIsland:Set('❌: Frozen Dimension Not Found')
+                FrozenIsland:Set('Frozen Dimension : 🔴')
             end
         end
     end)
 end)
+end
 
-
-FrozenIsland = SNt:AddLabel("")
+FrozenIsland = SNt:AddLabel("Frozen Dimension : Only Third Sea")
 
 SNt:AddToggle('Teleport Frozen Dimension [ NEED SPAWN ]', false, function(value)
 _G.Frozen = value
@@ -12481,11 +12564,11 @@ end
     
     local TimeRaid = R:AddLabel("Wait For Dungeon")
     
-    local Island1 = R:AddLabel(": lsland 1")
-    local Island2 = R:AddLabel(": lsland 2")
-    local Island3 = R:AddLabel(": lsland 3")
-    local Island4 = R:AddLabel(": lsland 4")
-    local Island5 = R:AddLabel(": lsland 5")
+    local Island1 = R:AddLabel("lsland 1 : 🔴")
+    local Island2 = R:AddLabel("lsland 2 : 🔴")
+    local Island3 = R:AddLabel("lsland 3 : 🔴")
+    local Island4 = R:AddLabel("Island 4 : 🔴")
+    local Island5 = R:AddLabel("lsland 5 : 🔴")
     
     R:AddLine()
     
@@ -12505,9 +12588,9 @@ end
         pcall(function()
             while wait() do
     if game.Workspace._WorldOrigin.Locations:FindFirstChild('Island 1') then
-    Island1:Set(': Island 1')
+    Island1:Set('Island 1 : 🟢')
     else
-      Island1:Set(': Island 1' )end
+      Island1:Set('Island 1 : 🔴' )end
             end
         end)
 end)
@@ -12516,9 +12599,9 @@ spawn(function()
         pcall(function()
             while wait() do
     if game.Workspace._WorldOrigin.Locations:FindFirstChild('Island 2') then
-    Island2:Set(': Island 2')
+    Island2:Set('Island 2 : 🟢')
     else
-      Island2:Set(': Island 2' )end
+      Island2:Set('Island 2 : 🔴' )end
             end
         end)
 end)
@@ -12527,9 +12610,9 @@ spawn(function()
         pcall(function()
             while wait() do
     if game.Workspace._WorldOrigin.Locations:FindFirstChild('Island 3') then
-    Island3:Set(': Island 3')
+    Island3:Set('Island 3 : 🟢')
     else
-      Island3:Set(': Island 3' )end
+      Island3:Set('Island 3 : 🔴' )end
             end
         end)
 end)
@@ -12538,9 +12621,9 @@ spawn(function()
         pcall(function()
             while wait() do
     if game.Workspace._WorldOrigin.Locations:FindFirstChild('Island 4') then
-    Island4:Set(': Island 4')
+    Island4:Set('Island 4 : 🟢')
     else
-      Island4:Set(': Island 4' )end
+      Island4:Set('Island 4 : 🔴' )end
             end
         end)
 end)
@@ -12549,9 +12632,9 @@ spawn(function()
         pcall(function()
             while wait() do
     if game.Workspace._WorldOrigin.Locations:FindFirstChild('Island 5') then
-    Island5:Set(': Island 5')
+    Island5:Set('Island 5 : 🟢')
     else
-      Island5:Set(': Island 5' )end
+      Island5:Set('Island 5 : 🔴' )end
             end
         end)
 end)
@@ -13581,7 +13664,7 @@ end)
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuySanguineArt")
     end)
 
-    S:AddButton("Buy DivineArt (Update) | $7,500 Frag | $7,500,000  ",function()
+    S:AddButton("Buy DivineArt | $7,500 Frag | $7,500,000  ",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("BuyDivineArt")
     end)
     -----Shop----------------
@@ -14032,7 +14115,7 @@ closeButton.MouseButton1Click:Connect(closeGUI)
         end)
     end)
     
-    D:AddToggle("Auto Gacha Fruit",_G.Random_Auto,function(value)
+    D:AddToggle("Auto Random Fruit",_G.Random_Auto,function(value)
         _G.Random_Auto = value
     end)
     
@@ -14045,8 +14128,29 @@ closeButton.MouseButton1Click:Connect(closeGUI)
             end
         end)
     end)
+
+    D:AddButton("Rain Fruit", function()
+        for h, i in pairs(game:GetObjects("rbxassetid://14759368201")[1]:GetChildren()) do
+            i.Parent = game.Workspace.Map
+            i:MoveTo(
+                game.Players.LocalPlayer.Character.PrimaryPart.Position +
+                    Vector3.new(math.random(-50, 50), 100, math.random(-50, 50))
+            )
+            if i.Fruit:FindFirstChild("AnimationController") then
+                i.Fruit:FindFirstChild("AnimationController"):LoadAnimation(i.Fruit:FindFirstChild("Idle")):Play()
+            end
+            i.Handle.Touched:Connect(
+                function(cR)
+                    if cR.Parent == game.Players.LocalPlayer.Character then
+                        i.Parent = game.Players.LocalPlayer.Backpack
+                        game.Players.LocalPlayer.Character.Humanoid:EquipTool(i)
+                    end
+                end
+            )
+        end
+    end)
     
-    D:AddButton("Gacha Fruit",function()
+    D:AddButton("Random Fruit",function()
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Cousin","Buy")
     end)
     
@@ -14054,6 +14158,24 @@ closeButton.MouseButton1Click:Connect(closeGUI)
         game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("GetFruits")
         game:GetService("Players").LocalPlayer.PlayerGui.Main.FruitShop.Visible = true
     end)
+
+    D:AddToggle("Fruit Notification",true ,_G.FruitCheck,function(value)
+        _G.FruitCheck = value
+        end)
+        
+        spawn(function()
+                while wait(.1) do
+                    if _G.FruitCheck then
+                        for i,v in pairs(game.Workspace:GetChildren()) do
+                            if string.find(v.Name, "Fruit") then
+                                require(game:GetService("ReplicatedStorage").Notification).new("Fruit Spawn"):Display();
+                                wait()
+                                setthreadcontext(5)
+                            end
+                        end
+                    end
+        end
+        end)
     
     D:AddToggle("Auto Drop Fruit",_G.DropFruit,function(value)
         _G.DropFruit = value
@@ -14514,321 +14636,131 @@ end)
 	Misc:AddTextbox("Lock Factment", "Please Type", true, function(value)
 	_G.LockFragments = value
 	end)
-	
-    Misc:AddSeperator("Hack")
-    Misc:AddButton("Unlock Buso",function()
-    
-    -- Ability [
---     Buso,Soru,Geppo,KenUpgrade
--- ]
---Example
-local Ability = "Buso" -- Ability Name
--- or
--- local Ability = {Buso,Soru,Geppo}
-if type(Ability) == 'string' then
-   game:GetService("CollectionService"):AddTag(game.Players.LocalPlayer.Character,Ability)
-elseif type(Ability) == 'table' then
-   for i,v in next , Ability do
-       game:GetService("CollectionService"):AddTag(game.Players.LocalPlayer.Character,v)
-   end
-   end
-   end)
-   
-   Misc:AddButton("Unlock Soru",function()
-   -- Ability [
---     Buso,Soru,Geppo-- ]
---Example
-local Ability = "Soru" -- Ability Name
--- or
--- local Ability = {Buso,Soru,Geppo}
-if type(Ability) == 'string' then
-   game:GetService("CollectionService"):AddTag(game.Players.LocalPlayer.Character,Ability)
-elseif type(Ability) == 'table' then
-   for i,v in next , Ability do
-       game:GetService("CollectionService"):AddTag(game.Players.LocalPlayer.Character,v)
-   end
-   end
-   end)
-   
-   Misc:AddButton("Unlock Geppo",function()
--- Ability [
---     Buso,Soru,Geppo-- ]
---Example
-local Ability = "Geppo" -- Ability Name
--- or
--- local Ability = {Buso,Soru,Geppo}
-if type(Ability) == 'string' then
-   game:GetService("CollectionService"):AddTag(game.Players.LocalPlayer.Character,Ability)
-elseif type(Ability) == 'table' then
-   for i,v in next , Ability do
-       game:GetService("CollectionService"):AddTag(game.Players.LocalPlayer.Character,v)
-   end
-   end
-   end)
 
-    Misc:AddButton("Unlock Portal",function()
-        _G.UnlockPortal = true
-    end)
-    
-    spawn(function()
-        while wait() do
-            pcall(function()
-                if _G.UnlockPortal == true then
-                    for i,v in pairs(game:GetService("Players").LocalPlayer.PlayerGui.Notifications:GetChildren()) do
-                        if v.Name == "NotificationTemplate" then
-                            if string.find(v.Text,"cannot") then
-                                v:Destroy()
-                            end
+    Mh:AddSeperator("Auto Hop Server")
+    Mh:AddLabel("Click And Wait 5 Second")
+
+    Mh:AddToggle("Auto Hop Server Mirage Island",_G.Hopfinddao,function(value)
+        _G.Hopfinddao = value
+       end)
+        spawn(function()
+            while wait() do
+            if _G.Hopfinddao then
+                if game:GetService("Workspace").Map:FindFirstChild("MysticIsland") or game:GetService("Workspace").Map:FindFirstChild("MysticIsland") then
+                    if HighestPointRealCFrame and (game.Players.LocalPlayer.Character.HumanoidRootPart.Position - HighestPointRealCFrame.Position).Magnitude > 10 then
+                    topos(getHighestPoint().CFrame * CFrame.new(0, 211.88, 0))
                         end
+                elseif not game:GetService("Workspace").Map:FindFirstChild("MysticIsland") or not game:GetService("Workspace").Map:FindFirstChild("MysticIsland") then
+                    Hop()
                     end
                 end
+            end
+        end)
+        Mh:AddToggle("Auto Hop Server Full Moon",_G.AutoFindFullmoon,function(value)
+            _G.AutoFindFullmoon = value    
             end)
-        end
+            
+            spawn(function()
+                 while wait() do
+                     if _G.AutoFindFullmoon then
+                     if game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149052" or game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149431" then
+                         wait(2.0)
+                         game.StarterGui:SetCore("SendNotification", {
+                             Title = "BRUTALITY HUB", 
+                             Text = "You Server Full Moon" ,
+                             Icon = "http://www.roblox.com/asset/?id=107679910024355",
+                             Duration = 2.5
+                         })
+                     elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709143733" then
+                         Hop()
+                         game.StarterGui:SetCore("SendNotification", {
+                             Title = "BRUTALITY HUB", 
+                             Text = "Wait New Server" ,
+                             Icon = "http://www.roblox.com/asset/?id=107679910024355",
+                             Duration = 2.5
+                         })
+                     elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709150401" then
+                         Hop()
+                         game.StarterGui:SetCore("SendNotification", {
+                             Title = "BRUTALITY HUB", 
+                             Text = "Wait New Server" ,
+                             Icon = "http://www.roblox.com/asset/?id=107679910024355",
+                             Duration = 2.5
+                         })
+                     elseif game:GetService("Lighting").Sky.MoonTextureId=="http://www.roblox.com/asset/?id=9709149680" then
+                         Hop()
+                         game.StarterGui:SetCore("SendNotification", {
+                             Title = "BRUTALITY HUB", 
+                             Text = "Wait New Server" ,
+                             Icon = "http://www.roblox.com/asset/?id=107679910024355",
+                             Duration = 2.5
+                         })
+                     else
+                         Hop()
+                         end
+                     end
+                 end
+             end)
+    Mh:AddToggle("Farm Dough King Hop", _G.AutodoughkingHop,function(value)
+        _G.AutodoughkingHop = value
+    end)
+    spawn(function()
+        while wait() do
+         if  _G.Autodoughking and World3 then
+                pcall(function()
+                    if game:GetService("Workspace").Enemies:FindFirstChild("Dough King") then
+                               for i,v in pairs(game:GetService("Workspace").Enemies:GetChildren()) do
+                                   if v.Name == "Dough King" then
+                                       if v:FindFirstChild("Humanoid") and v:FindFirstChild("HumanoidRootPart") and v.Humanoid.Health > 0 then
+                                           repeat task.wait()
+                                               AutoHaki()
+                                               EquipWeapon(_G.SelectWeapon)
+                                               v.HumanoidRootPart.CanCollide = false
+                                               v.Humanoid.WalkSpeed = 2
+                                               v.HumanoidRootPart.Size = Vector3.new(50,50,50)
+                                               HyperCahaya(v.HumanoidRootPart.CFrame * CFrame.new(PosX,PosY,PosZ))
+                                               game:GetService("VirtualUser"):CaptureController()
+                                               game:GetService("VirtualUser"):Button1Down(Vector2.new(1280,672))
+                                               sethiddenproperty(game.Players.LocalPlayer,"SimulationRadius",math.huge)
+                                           until not  _G.Autodoughking or not v.Parent or v.Humanoid.Health <= 0
+                                       end
+                                   end
+                               end
+                           else
+                           HyperCahaya(CFrame.new(-2662.818603515625, 1062.3480224609375, -11853.6953125))
+                               if game:GetService("ReplicatedStorage"):FindFirstChild("Dough King") then
+                                   HyperCahaya(game:GetService("ReplicatedStorage"):FindFirstChild("Dough King").HumanoidRootPart.CFrame * CFrame.new(2,20,2))
+                               else
+                                   if  _G.AutodoughkingHop then
+                                       Hop()
+                                   end
+                               end
+                           end
+                       end)
+                   end
+               end
+           end)
+    Mh:AddToggle("Buy Legendary Sword Hop",_G.AutoBuyLegendarySword_Hop,function(value)
+        _G.AutoBuyLegendarySword_Hop = value
+    end)
+
+    Mh:AddToggle("Buy Enchancement Hop Server",_G.AutoBuyEnchancementColour_H0p,function(value)
+        _G.AutoBuyEnchancementColour_H0p = value
     end)
     
     spawn(function()
         while wait() do
-            pcall(function()
-                if _G.UnlockPortal == true then
-                    CastlePostoMansion = CFrame.new(-5084.8447265625, 316.48101806641, -3145.3752441406)
-                    MansiontoCastlePos = CFrame.new(-12464.596679688, 376.30590820312, -7567.2626953125)
-                    Castletophydra = CFrame.new(-5095.33984375, 316.48101806641, -3168.3134765625)
-                    HydratoCastle = CFrame.new(5741.869140625, 611.94750976562, -282.61154174805)
-                    if (CastlePostoMansion.Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 8 then
-                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(-12471.169921875, 374.94024658203, -7551.677734375))
-                    end
-                    if (MansiontoCastlePos.Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 8 then
-                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(-5072.08984375, 314.5412902832, -3151.1098632812))
-                    end
-                    if (Castletophydra.Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 8 then
-                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(5748.7587890625, 610.44982910156, -267.81704711914))
-                    end
-                    if (HydratoCastle.Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 8 then
-                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(-5072.08984375, 314.5412902832, -3151.1098632812))
-                    end
+            if _G.AutoBuyEnchancementColour then
+                local args = {
+                    [1] = "ColorsDealer",
+                    [2] = "2"
+                }
+                game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer(unpack(args))
+                if _G.AutoBuyEnchancementColour_H0p and _G.AutoBuyEnchancementColour and not World1 then
+                    wait(10)
+                    Hop()
                 end
-            end)
-        end
-    end)
-    
-    Misc:AddButton("Max Zoom", function()
-		while wait() do
-			game.Players.LocalPlayer.CameraMaxZoomDistance = 9223372036854718
-			end
-	end)
-
-Misc:AddButton("Kaitun Cap", function(value)
-		local cac = require(game:GetService("Players").LocalPlayer.PlayerGui.Main.UIController.Inventory)
-		local Inventory = game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("getInventory")
-		local Items = {}
-		local RaityLevel = {"Mythical","Legendary","Rare","Uncommon","Common"}
-		local RaityColor =  {
-			["Common"] = Color3.fromRGB(179, 179, 179),
-			["Uncommon"] = Color3.fromRGB(92, 140, 211),
-			["Rare"] =  Color3.fromRGB(140, 82, 255),
-			["Legendary"] = Color3.fromRGB(213, 43, 228) ,
-			["Mythical"] =  Color3.fromRGB(238, 47, 50)
-		}
-		function GetRaity(color)
-			for k,v in pairs(RaityColor) do 
-				if v==color then return k end
-			end
-		end
-
-		for k,v in pairs(Inventory) do 
-			Items[v.Name] = v
-		end
-
-		local total = #getupvalue(cac.UpdateRender,4)
-		local rac = {}
-		local allitem = {}
-		local total2 = 0
-		while total2<total do 
-			local i = 0
-			while i < 25000 and total2<total do 
-				game:GetService("Players").LocalPlayer.PlayerGui.Main.InventoryContainer.Right.Content.ScrollingFrame.CanvasPosition = Vector2.new(0,i)
-				for k,v in pairs(game:GetService("Players").LocalPlayer.PlayerGui.Main.InventoryContainer.Right.Content.ScrollingFrame.Frame:GetChildren()) do 
-					if v:IsA("Frame") and not rac[v.ItemName.Text] and v.ItemName.Visible==true then 
-						local vaihuhu = GetRaity(v.Background.BackgroundColor3)
-						if vaihuhu then
-							print("Rac")
-							if not allitem[vaihuhu] then 
-								allitem[vaihuhu] = {}
-							end
-							table.insert(allitem[vaihuhu],v:Clone())
-						end
-						total2=total2+1
-						rac[v.ItemName.Text] = true
-					end
-				end
-				i=i+20
-			end
-			wait()
-		end
-		function GetXY(vec) 
-			return vec*100
-		end
-
-		local tvk = Instance.new("UIListLayout")
-		tvk.FillDirection = Enum.FillDirection.Vertical
-		tvk.SortOrder = 2
-		tvk.Padding = UDim.new(0,10)
-
-		local Left = Instance.new("Frame",game.Players.LocalPlayer.PlayerGui.BubbleChat)
-		Left.BackgroundTransparency = 1
-		Left.Size = UDim2.new(.5,0,1,0) 
-		tvk.Parent = Left
-
-		local Right = Instance.new("Frame",game.Players.LocalPlayer.PlayerGui.BubbleChat)
-		Right.BackgroundTransparency = 1
-		Right.Size = UDim2.new(.5,0,1,0) 
-		Right.Position = UDim2.new(.6,0,0,0)
-		tvk:Clone().Parent = Right
-		for k,v in pairs(allitem) do 
-			local cac = Instance.new("Frame",Left)
-			cac.BackgroundTransparency = 1
-			cac.Size = UDim2.new(1,0,0,0) 
-			cac.LayoutOrder = table.find(RaityLevel,k)
-
-			local cac2 = Instance.new("Frame",Right)
-			cac2.BackgroundTransparency = 1
-			cac2.Size = UDim2.new(1,0,0,0) 
-			cac2.LayoutOrder = table.find(RaityLevel,k)
-
-			local tvk = Instance.new("UIGridLayout",cac)
-			tvk.CellPadding = UDim2.new(.005,0,.005,0)
-			tvk.CellSize =  UDim2.new(0,70,0,70)
-			tvk.FillDirectionMaxCells = 100
-			tvk.FillDirection = Enum.FillDirection.Horizontal
-
-			local ccc = tvk:Clone()
-			ccc.Parent = cac2
-			for k,v in pairs(v) do 
-				if Items[v.ItemName.Text] and Items[v.ItemName.Text].Mastery then 
-					if v.ItemLine2.Text~="Accessory" then 
-						local bucac = v.ItemName:Clone()
-						bucac.BackgroundTransparency = 1
-						bucac.TextSize = 10
-						bucac.TextXAlignment  = 2
-						bucac.TextYAlignment  = 2
-						bucac.ZIndex  = 5
-						bucac.Text = Items[v.ItemName.Text].Mastery
-						bucac.Size = UDim2.new(.5,0,.5,0)
-						bucac.Position = UDim2.new(.5,0,.5,0)
-						bucac.Parent = v
-					end
-					v.Parent = cac
-				elseif v.ItemLine2.Text == "Blox Fruit" then 
-					v.Parent = cac2
-				end
-			end
-			cac.AutomaticSize = 2
-			cac2.AutomaticSize = 2
-		end
-		local ListHuhu = {
-			["Superhuman"] = Vector2.new(3,2),
-			["GodHuman"] = Vector2.new(3,2),
-			["DeathStep"] = Vector2.new(4,3),
-			["ElectricClaw"] = Vector2.new(2,0),
-			["SharkmanKarate"] = Vector2.new(0,0),
-			["DragonTalon"] = Vector2.new(1,5)
-		}
-		local MeleeG = Instance.new("Frame",Left)
-		MeleeG.BackgroundTransparency = 1
-		MeleeG.Size = UDim2.new(1,0,0,0) 
-		MeleeG.LayoutOrder = table.find(RaityLevel,k)
-		MeleeG.AutomaticSize=2
-		MeleeG.LayoutOrder = 100
-		local tvk = Instance.new("UIGridLayout",MeleeG)
-		tvk.CellPadding = UDim2.new(.005,0,.005,0)
-		tvk.CellSize =  UDim2.new(0,70,0,70)
-		tvk.FillDirectionMaxCells = 100
-		tvk.FillDirection = Enum.FillDirection.Horizontal
-
-		local cac = {"Superhuman","ElectricClaw","DragonTalon","SharkmanKarate","DeathStep","GodHuman"}
-		for k,v in pairs(cac) do
-			if ListHuhu[v] and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Buy"..v,true) == 1 then 
-				local huhu = Instance.new("ImageLabel",MeleeG)
-				huhu.Image = "rbxassetid://16058297648"
-				huhu.ImageRectSize = Vector2.new(100,100)
-				huhu.ImageRectOffset = ListHuhu[v]*100
-			end
-		end
-		function formatNumber(v)
-			return tostring(v):reverse():gsub("%d%d%d", "%1,"):reverse():gsub("^,", "")
-		end
-		game:GetService("Players").LocalPlayer.PlayerGui.Main.Beli.Position = UDim2.new(0,800,0,500)
-		game:GetService("Players").LocalPlayer.PlayerGui.Main.Level.Position = UDim2.new(0,800,0,550)
-
-		local thieunang = game:GetService("Players").LocalPlayer.PlayerGui.Main.Fragments:Clone()
-		thieunang.Parent = game:GetService("Players").LocalPlayer.PlayerGui.BubbleChat
-		thieunang.Position = UDim2.new(0,800,0.63,0)
-		local n = formatNumber(game.Players.LocalPlayer.Data.Fragments.Value)
-		thieunang.Text = "ÃƒÆ’Ã¢â‚¬ ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢"..n
-		print("Done")
-		pcall(function() 
-			game:GetService("Players").LocalPlayer.PlayerGui.Main.MenuButton:Destroy()
-		end)
-		pcall(function() 
-			game:GetService("Players").LocalPlayer.PlayerGui.Main.HP:Destroy()
-		end)
-		pcall(function() 
-			game:GetService("Players").LocalPlayer.PlayerGui.Main.Energy:Destroy()
-		end)
-		for k,v in pairs(game:GetService("Players").LocalPlayer.PlayerGui.Main:GetChildren()) do 
-			if v:IsA("ImageButton") then 
-				v:Destroy()
-			end
-		end
-		pcall(function() 
-			game:GetService("Players").LocalPlayer.PlayerGui.Main.Compass:Destroy()
-		end)
-	end)
-	
-    Misc:AddButton("Invisible",function()
-        game:GetService("Players").LocalPlayer.Character.LowerTorso:Destroy()
-    end)
-    
-    Misc:AddButton("Click TP Tool",function()
-        local plr = game:GetService("Players").LocalPlayer
-        local mouse = plr:GetMouse()
-        local tool = Instance.new("Tool")
-        tool.RequiresHandle = false
-        tool.Name = "Teleport Tool"
-        tool.Activated:Connect(function()
-        local root = plr.Character.HumanoidRootPart
-        local pos = mouse.Hit.Position+Vector3.new(0,2.5,0)
-        local offset = pos-root.Position
-        root.CFrame = root.CFrame+offset
-        end)
-        tool.Parent = plr.Backpack
-    end)
-    
-    Misc:AddButton("Stop All Tween",function()
-        HyperCahaya(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
-        _G.Clip = false
-    end)
---tadinya tempat redeem code
-    
-    Misc:AddSeperator("State")
-    
-    Misc:AddDropdown("Select Haki State",{"State 0","State 1","State 2","State 3","State 4","State 5"},function(value)
-        _G.SelectStateHaki = value
-    end)
-    
-    Misc:AddButton("Change Buso Haki State",function()
-        if _G.SelectStateHaki == "State 0" then
-            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ChangeBusoStage",0)
-        elseif _G.SelectStateHaki == "State 1" then
-            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ChangeBusoStage",1)
-        elseif _G.SelectStateHaki == "State 2" then
-            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ChangeBusoStage",2)
-        elseif _G.SelectStateHaki == "State 3" then
-            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ChangeBusoStage",3)
-        elseif _G.SelectStateHaki == "State 4" then
-            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ChangeBusoStage",4)
-        elseif _G.SelectStateHaki == "State 5" then
-            game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("ChangeBusoStage",5)
+            end 
         end
     end)
     
@@ -14968,6 +14900,7 @@ end)
 
 
     Mh:AddSeperator("Mod Hack By Medusa")
+    Mh:AddLabel("Turn On Inf Ability")
     
     Mh:AddToggle("Dodge No Cooldown",false,function(value)
         nododgecool = value
@@ -15137,4 +15070,297 @@ spawn(function()
             end
         end
     end)
+    end)
+    Mh:AddSeperator("Hack")
+    Mh:AddButton("Unlock Buso",function()
+    
+    -- Ability [
+--     Buso,Soru,Geppo,KenUpgrade
+-- ]
+--Example
+local Ability = "Buso" -- Ability Name
+-- or
+-- local Ability = {Buso,Soru,Geppo}
+if type(Ability) == 'string' then
+   game:GetService("CollectionService"):AddTag(game.Players.LocalPlayer.Character,Ability)
+elseif type(Ability) == 'table' then
+   for i,v in next , Ability do
+       game:GetService("CollectionService"):AddTag(game.Players.LocalPlayer.Character,v)
+   end
+   end
+   end)
+   
+   Mh:AddButton("Unlock Soru",function()
+   -- Ability [
+--     Buso,Soru,Geppo-- ]
+--Example
+local Ability = "Soru" -- Ability Name
+-- or
+-- local Ability = {Buso,Soru,Geppo}
+if type(Ability) == 'string' then
+   game:GetService("CollectionService"):AddTag(game.Players.LocalPlayer.Character,Ability)
+elseif type(Ability) == 'table' then
+   for i,v in next , Ability do
+       game:GetService("CollectionService"):AddTag(game.Players.LocalPlayer.Character,v)
+   end
+   end
+   end)
+   
+   Mh:AddButton("Unlock Geppo",function()
+-- Ability [
+--     Buso,Soru,Geppo-- ]
+--Example
+local Ability = "Geppo" -- Ability Name
+-- or
+-- local Ability = {Buso,Soru,Geppo}
+if type(Ability) == 'string' then
+   game:GetService("CollectionService"):AddTag(game.Players.LocalPlayer.Character,Ability)
+elseif type(Ability) == 'table' then
+   for i,v in next , Ability do
+       game:GetService("CollectionService"):AddTag(game.Players.LocalPlayer.Character,v)
+   end
+   end
+   end)
+
+    Mh:AddButton("Unlock Portal",function()
+        _G.UnlockPortal = true
+    end)
+    
+    spawn(function()
+        while wait() do
+            pcall(function()
+                if _G.UnlockPortal == true then
+                    for i,v in pairs(game:GetService("Players").LocalPlayer.PlayerGui.Notifications:GetChildren()) do
+                        if v.Name == "NotificationTemplate" then
+                            if string.find(v.Text,"cannot") then
+                                v:Destroy()
+                            end
+                        end
+                    end
+                end
+            end)
+        end
+    end)
+    
+    spawn(function()
+        while wait() do
+            pcall(function()
+                if _G.UnlockPortal == true then
+                    CastlePostoMansion = CFrame.new(-5084.8447265625, 316.48101806641, -3145.3752441406)
+                    MansiontoCastlePos = CFrame.new(-12464.596679688, 376.30590820312, -7567.2626953125)
+                    Castletophydra = CFrame.new(-5095.33984375, 316.48101806641, -3168.3134765625)
+                    HydratoCastle = CFrame.new(5741.869140625, 611.94750976562, -282.61154174805)
+                    if (CastlePostoMansion.Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 8 then
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(-12471.169921875, 374.94024658203, -7551.677734375))
+                    end
+                    if (MansiontoCastlePos.Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 8 then
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(-5072.08984375, 314.5412902832, -3151.1098632812))
+                    end
+                    if (Castletophydra.Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 8 then
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(5748.7587890625, 610.44982910156, -267.81704711914))
+                    end
+                    if (HydratoCastle.Position - game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.Position).Magnitude <= 8 then
+                        game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("requestEntrance",Vector3.new(-5072.08984375, 314.5412902832, -3151.1098632812))
+                    end
+                end
+            end)
+        end
+    end)
+    
+    Mh:AddButton("Max Zoom", function()
+		while wait() do
+			game.Players.LocalPlayer.CameraMaxZoomDistance = 9223372036854718
+			end
+	end)
+
+Mh:AddButton("Kaitun Cap", function(value)
+		local cac = require(game:GetService("Players").LocalPlayer.PlayerGui.Main.UIController.Inventory)
+		local Inventory = game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("getInventory")
+		local Items = {}
+		local RaityLevel = {"Mythical","Legendary","Rare","Uncommon","Common"}
+		local RaityColor =  {
+			["Common"] = Color3.fromRGB(179, 179, 179),
+			["Uncommon"] = Color3.fromRGB(92, 140, 211),
+			["Rare"] =  Color3.fromRGB(140, 82, 255),
+			["Legendary"] = Color3.fromRGB(213, 43, 228) ,
+			["Mythical"] =  Color3.fromRGB(238, 47, 50)
+		}
+		function GetRaity(color)
+			for k,v in pairs(RaityColor) do 
+				if v==color then return k end
+			end
+		end
+
+		for k,v in pairs(Inventory) do 
+			Items[v.Name] = v
+		end
+
+		local total = #getupvalue(cac.UpdateRender,4)
+		local rac = {}
+		local allitem = {}
+		local total2 = 0
+		while total2<total do 
+			local i = 0
+			while i < 25000 and total2<total do 
+				game:GetService("Players").LocalPlayer.PlayerGui.Main.InventoryContainer.Right.Content.ScrollingFrame.CanvasPosition = Vector2.new(0,i)
+				for k,v in pairs(game:GetService("Players").LocalPlayer.PlayerGui.Main.InventoryContainer.Right.Content.ScrollingFrame.Frame:GetChildren()) do 
+					if v:IsA("Frame") and not rac[v.ItemName.Text] and v.ItemName.Visible==true then 
+						local vaihuhu = GetRaity(v.Background.BackgroundColor3)
+						if vaihuhu then
+							print("Rac")
+							if not allitem[vaihuhu] then 
+								allitem[vaihuhu] = {}
+							end
+							table.insert(allitem[vaihuhu],v:Clone())
+						end
+						total2=total2+1
+						rac[v.ItemName.Text] = true
+					end
+				end
+				i=i+20
+			end
+			wait()
+		end
+		function GetXY(vec) 
+			return vec*100
+		end
+
+		local tvk = Instance.new("UIListLayout")
+		tvk.FillDirection = Enum.FillDirection.Vertical
+		tvk.SortOrder = 2
+		tvk.Padding = UDim.new(0,10)
+
+		local Left = Instance.new("Frame",game.Players.LocalPlayer.PlayerGui.BubbleChat)
+		Left.BackgroundTransparency = 1
+		Left.Size = UDim2.new(.5,0,1,0) 
+		tvk.Parent = Left
+
+		local Right = Instance.new("Frame",game.Players.LocalPlayer.PlayerGui.BubbleChat)
+		Right.BackgroundTransparency = 1
+		Right.Size = UDim2.new(.5,0,1,0) 
+		Right.Position = UDim2.new(.6,0,0,0)
+		tvk:Clone().Parent = Right
+		for k,v in pairs(allitem) do 
+			local cac = Instance.new("Frame",Left)
+			cac.BackgroundTransparency = 1
+			cac.Size = UDim2.new(1,0,0,0) 
+			cac.LayoutOrder = table.find(RaityLevel,k)
+
+			local cac2 = Instance.new("Frame",Right)
+			cac2.BackgroundTransparency = 1
+			cac2.Size = UDim2.new(1,0,0,0) 
+			cac2.LayoutOrder = table.find(RaityLevel,k)
+
+			local tvk = Instance.new("UIGridLayout",cac)
+			tvk.CellPadding = UDim2.new(.005,0,.005,0)
+			tvk.CellSize =  UDim2.new(0,70,0,70)
+			tvk.FillDirectionMaxCells = 100
+			tvk.FillDirection = Enum.FillDirection.Horizontal
+
+			local ccc = tvk:Clone()
+			ccc.Parent = cac2
+			for k,v in pairs(v) do 
+				if Items[v.ItemName.Text] and Items[v.ItemName.Text].Mastery then 
+					if v.ItemLine2.Text~="Accessory" then 
+						local bucac = v.ItemName:Clone()
+						bucac.BackgroundTransparency = 1
+						bucac.TextSize = 10
+						bucac.TextXAlignment  = 2
+						bucac.TextYAlignment  = 2
+						bucac.ZIndex  = 5
+						bucac.Text = Items[v.ItemName.Text].Mastery
+						bucac.Size = UDim2.new(.5,0,.5,0)
+						bucac.Position = UDim2.new(.5,0,.5,0)
+						bucac.Parent = v
+					end
+					v.Parent = cac
+				elseif v.ItemLine2.Text == "Blox Fruit" then 
+					v.Parent = cac2
+				end
+			end
+			cac.AutomaticSize = 2
+			cac2.AutomaticSize = 2
+		end
+		local ListHuhu = {
+			["Superhuman"] = Vector2.new(3,2),
+			["GodHuman"] = Vector2.new(3,2),
+			["DeathStep"] = Vector2.new(4,3),
+			["ElectricClaw"] = Vector2.new(2,0),
+			["SharkmanKarate"] = Vector2.new(0,0),
+			["DragonTalon"] = Vector2.new(1,5)
+		}
+		local MeleeG = Instance.new("Frame",Left)
+		MeleeG.BackgroundTransparency = 1
+		MeleeG.Size = UDim2.new(1,0,0,0) 
+		MeleeG.LayoutOrder = table.find(RaityLevel,k)
+		MeleeG.AutomaticSize=2
+		MeleeG.LayoutOrder = 100
+		local tvk = Instance.new("UIGridLayout",MeleeG)
+		tvk.CellPadding = UDim2.new(.005,0,.005,0)
+		tvk.CellSize =  UDim2.new(0,70,0,70)
+		tvk.FillDirectionMaxCells = 100
+		tvk.FillDirection = Enum.FillDirection.Horizontal
+
+		local cac = {"Superhuman","ElectricClaw","DragonTalon","SharkmanKarate","DeathStep","GodHuman"}
+		for k,v in pairs(cac) do
+			if ListHuhu[v] and game:GetService("ReplicatedStorage").Remotes.CommF_:InvokeServer("Buy"..v,true) == 1 then 
+				local huhu = Instance.new("ImageLabel",MeleeG)
+				huhu.Image = "rbxassetid://16058297648"
+				huhu.ImageRectSize = Vector2.new(100,100)
+				huhu.ImageRectOffset = ListHuhu[v]*100
+			end
+		end
+		function formatNumber(v)
+			return tostring(v):reverse():gsub("%d%d%d", "%1,"):reverse():gsub("^,", "")
+		end
+		game:GetService("Players").LocalPlayer.PlayerGui.Main.Beli.Position = UDim2.new(0,800,0,500)
+		game:GetService("Players").LocalPlayer.PlayerGui.Main.Level.Position = UDim2.new(0,800,0,550)
+
+		local thieunang = game:GetService("Players").LocalPlayer.PlayerGui.Main.Fragments:Clone()
+		thieunang.Parent = game:GetService("Players").LocalPlayer.PlayerGui.BubbleChat
+		thieunang.Position = UDim2.new(0,800,0.63,0)
+		local n = formatNumber(game.Players.LocalPlayer.Data.Fragments.Value)
+		thieunang.Text = "ÃƒÆ’Ã¢â‚¬ ÃƒÂ¢Ã¢â€šÂ¬Ã¢â€žÂ¢"..n
+		print("Done")
+		pcall(function() 
+			game:GetService("Players").LocalPlayer.PlayerGui.Main.MenuButton:Destroy()
+		end)
+		pcall(function() 
+			game:GetService("Players").LocalPlayer.PlayerGui.Main.HP:Destroy()
+		end)
+		pcall(function() 
+			game:GetService("Players").LocalPlayer.PlayerGui.Main.Energy:Destroy()
+		end)
+		for k,v in pairs(game:GetService("Players").LocalPlayer.PlayerGui.Main:GetChildren()) do 
+			if v:IsA("ImageButton") then 
+				v:Destroy()
+			end
+		end
+		pcall(function() 
+			game:GetService("Players").LocalPlayer.PlayerGui.Main.Compass:Destroy()
+		end)
+	end)
+	
+    Mh:AddButton("Invisible",function()
+        game:GetService("Players").LocalPlayer.Character.LowerTorso:Destroy()
+    end)
+    
+    Mh:AddButton("Click TP Tool",function()
+        local plr = game:GetService("Players").LocalPlayer
+        local mouse = plr:GetMouse()
+        local tool = Instance.new("Tool")
+        tool.RequiresHandle = false
+        tool.Name = "Teleport Tool"
+        tool.Activated:Connect(function()
+        local root = plr.Character.HumanoidRootPart
+        local pos = mouse.Hit.Position+Vector3.new(0,2.5,0)
+        local offset = pos-root.Position
+        root.CFrame = root.CFrame+offset
+        end)
+        tool.Parent = plr.Backpack
+    end)
+    
+    Mh:AddButton("Stop All Tween",function()
+        HyperCahaya(game:GetService("Players").LocalPlayer.Character.HumanoidRootPart.CFrame)
+        _G.Clip = false
     end)
