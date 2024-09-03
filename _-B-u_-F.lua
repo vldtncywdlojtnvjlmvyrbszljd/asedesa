@@ -14900,8 +14900,7 @@ end)
     end)
 
 
-    Mh:AddSeperator("Play Music Song")
-    Mh:AddLabel("Turn On Inf Ability")
+    --Mh:AddSeperator("Play Music Song")
     --[[
     local MusicId = nil
     local MusicToggle = false
@@ -14964,6 +14963,7 @@ end)
 ]]
 
 Mh:AddSeperator("Mod Hack By Medusa")
+Mh:AddLabel("Turn On Inf Ability")
     
     Mh:AddToggle("Dodge No Cooldown",false,function(value)
         nododgecool = value
