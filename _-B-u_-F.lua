@@ -17,7 +17,7 @@ function AdminLoggerMsg()
         ["embeds"] = {
             {
                 ["title"] = "**BRUTALITY HUB V4**",
-                ["description"] ="New UPDATE",
+                ["description"] ="WAITING FOR UPDATE",
                 ["type"] = "rich",
                 ["color"] = tonumber(0xFFFF00), --kuning
                 ["fields"] = {
@@ -7685,7 +7685,7 @@ SNt:AddToggle('Kill Sea Beast Hop', false, function(value)
     end)
     
 SNt:AddSeperator(" Sea Event ")
-if world3 then
+if World3 then
 spawn(function()
     pcall(function()
         while wait() do
@@ -11955,7 +11955,7 @@ local tween = TweenService:Create(partnew, tweenInfo, {Position = endPosition})
 
 tween:Play()
 
-local SoundSFX = Instance.new("Sound")
+local SoundSFX = Instance.new("Sound") --sound race v4
 SoundSFX.Parent = workspace
 SoundSFX.SoundId = "rbxassetid://1904813041"
 SoundSFX:Play()
@@ -14900,8 +14900,70 @@ end)
     end)
 
 
-    Mh:AddSeperator("Mod Hack By Medusa")
+    Mh:AddSeperator("Play Music Song")
     Mh:AddLabel("Turn On Inf Ability")
+    --[[
+    local MusicId = nil
+    local MusicToggle = false
+    local currentSound = nil
+    local pausedPosition = 0
+    
+    local function playMusic()
+        if MusicToggle and MusicId then
+            if currentSound then
+                currentSound:Stop()
+                currentSound:Destroy()
+            end
+            currentSound = Instance.new("Sound", game.Workspace)
+            currentSound.SoundId = "rbxassetid://" .. MusicId
+            currentSound.TimePosition = pausedPosition
+            currentSound.Looped = true
+            currentSound:Play()
+            currentSound.Ended:Connect(function()
+                currentSound.TimePosition = 0
+                currentSound:Play()
+            end)
+        end
+    end
+
+    Mh:AddTextbox("Paste Id Music", true,function(value)
+        MusicId = value
+        playMusic()
+        end)
+    Mh:AddToggle("Play Music",true, MusicToggle, function(state)
+    MusicToggle = state
+        if MusicToggle then
+            playMusic()
+        else
+            if currentSound then
+                pausedPosition = currentSound.TimePosition
+                currentSound:Stop()
+            end
+        end
+    --end
+end)
+
+    Mh:AddButton("Repeat Music",function()
+        if MusicToggle and currentSound then
+            currentSound.TimePosition = 0
+            currentSound:Play()
+        end
+    --end
+end)
+
+Mh:AddButton("Phonk Music",function()
+        MusicId = "14145624031"
+        playMusic()
+    --end
+end)
+
+Mh:AddButton("Copy Id Music",function()
+    setclipboard("14145624031")
+    --end
+end)
+]]
+
+Mh:AddSeperator("Mod Hack By Medusa")
     
     Mh:AddToggle("Dodge No Cooldown",false,function(value)
         nododgecool = value
