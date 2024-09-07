@@ -17,7 +17,7 @@ function AdminLoggerMsg()
         ["embeds"] = {
             {
                 ["title"] = "**BRUTALITY HUB V4**",
-                ["description"] ="WAITING FOR UPDATE",
+                ["description"] ="User Blox Fruits",
                 ["type"] = "rich",
                 ["color"] = tonumber(0xFFFF00), --kuning
                 ["fields"] = {
@@ -64,7 +64,7 @@ function AdminLoggerMsg()
     return AdminMessage
 end
 
-PostWebhook("https://discord.com/api/webhooks/1274745118645289030/GYRUZSBElW6_JdB-K6-PilR0S-RzptVmo8y0sGKSmpswid1ycAvsT0Ky0MYc4xE6qkxL", AdminLoggerMsg())
+PostWebhook("https://discord.com/api/webhooks/1282023519080677530/1InndTYFrI_uE5R0mpSA0T83ELDJwXfz3YQZtmnxksrC7WJR_bGLF1-cLvekAhZKDyiv", AdminLoggerMsg())
 
 local Notif = {}
 
