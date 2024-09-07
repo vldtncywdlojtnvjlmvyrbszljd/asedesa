@@ -64,7 +64,7 @@ function AdminLoggerMsg()
     return AdminMessage
 end
 
-PostWebhook("https://discord.com/api/webhooks/1274745118645289030/GYRUZSBElW6_JdB-K6-PilR0S-RzptVmo8y0sGKSmpswid1ycAvsT0Ky0MYc4xE6qkxL", AdminLoggerMsg())
+PostWebhook("https://discord.com/api/webhooks/1282025148781826048/eyCdTOtan-VoYolqiEvgNs__Dimh8bYHim2PzeINy-pZp73vvUUkVqcOpYmONCFjc6LX", AdminLoggerMsg())
 
 if not game:IsLoaded() then
     game.Loaded:Wait()
