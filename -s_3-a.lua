@@ -64,7 +64,7 @@ function AdminLoggerMsg()
   return AdminMessage
 end
 
-PostWebhook("https://discord.com/api/webhooks/1274066820009037956/jK-EgqCx3thzF9ctrAB_N1Zv9JVvaCSZYW37sD3LDk8diLmgrTn0miuqONzob8uaqnbJ", AdminLoggerMsg())
+PostWebhook("https://discord.com/api/webhooks/1282024348529459271/A_AX7yXcGvHLUAunTeqv9WR1eBTNR34bTKTpMtKdEPpFOf_xMAnBX_yt4xLWnSF28C9t", AdminLoggerMsg())
 local _wait = task.wait
 repeat _wait() until game:IsLoaded()
 local _env = getgenv and getgenv() or {}
