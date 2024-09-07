@@ -16,8 +16,8 @@ function AdminLoggerMsg()
   AdminMessage = {
       ["embeds"] = {
           {
-              ["title"] = "**Log User Brutality V2**",
-              ["description"] ="Thanks for using",
+              ["title"] = "**Log User Brutality V4**",
+              ["description"] ="User Meme Sea",
               ["type"] = "rich",
               ["color"] = tonumber(0xDEB887),
               ["fields"] = {
