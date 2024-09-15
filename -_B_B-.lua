@@ -16,8 +16,8 @@ function AdminLoggerMsg()
     AdminMessage = {
         ["embeds"] = {
             {
-                ["title"] = "**BRUTALITY HUB V4**",
-                ["description"] ="Blade Ball",
+                ["title"] = "****",
+                ["description"] ="",
                 ["type"] = "rich",
                 ["color"] = tonumber(0xff0000), --kuning
                 ["fields"] = {
