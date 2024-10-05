@@ -41,32 +41,32 @@ local function SendEliteWebhook(EliteName)
                     {
                         name = "<a:online:1291408185390923878> Overview",
                         value = "```Note: If No Message, it got blocked by Discord (wait 1-2 hours and it will self-fix) - 𝕭𝖔𝖙𝖚𝖓𝖆.inc```",
-                        inline = false
+                        inline = true
                     },
                     {
-                        name = "🗺️ Location",
+                        name = "<a:location:1281145107134812171> Location",
                         value = "```" .. location .. "```",
-                        inline = false
+                        inline = true
                     },
                     {
                         name = "<:botunalock:1291855989997441144> Elite Name",
                         value = "```" .. EliteName .. "```",
-                        inline = false
+                        inline = true
                     },
                     {
-                        name = "⚡ Player Count",
+                        name = "<:user:901414863501402132> Player Count",
                         value = "```" .. PlayerCount .. "/12```",
-                        inline = false
+                        inline = true
                     },
                     {
-                        name = "📄 Job ID",
+                        name = "<a:sword:1280684430007996418> Job ID",
                         value = tostring(game.JobId),
-                        inline = false
+                        inline = true
                     },
                     {
-                        name = "📝 Join Script",
+                        name = "<a:zserverboost:1248538010946109480> Join Script",
                         value = "game:GetService('TeleportService'):TeleportToPlaceInstance(" .. game.PlaceId .. ", '" .. game.JobId .. "', game:GetService('Players').LocalPlayer)",
-                        inline = false
+                        inline = true
                     }
                 }
             }
