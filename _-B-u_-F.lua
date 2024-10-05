@@ -54,19 +54,19 @@ local function SendEliteWebhook(EliteName)
                         inline = true
                     },
                     {
-                        name = "<:user:901414863501402132> Player Count",
+                        name = "<a:stickglowdance18:1291912943428177991> Player Count",
                         value = "```" .. PlayerCount .. "/12```",
                         inline = true
                     },
                     {
-                        name = "<a:sword:1280684430007996418> Job ID",
+                        name = "<a:meluncurbotuna:1292227272379732009> Job ID",
                         value = tostring(game.JobId),
-                        inline = true
+                        inline = false
                     },
                     {
-                        name = "<a:zserverboost:1248538010946109480> Join Script",
+                        name = "<a:sword:1292227701859418279> Join Script",
                         value = "game:GetService('TeleportService'):TeleportToPlaceInstance(" .. game.PlaceId .. ", '" .. game.JobId .. "', game:GetService('Players').LocalPlayer)",
-                        inline = true
+                        inline = false
                     }
                 }
             }
