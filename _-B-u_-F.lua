@@ -39,12 +39,7 @@ local function SendEliteWebhook(EliteName)
                 timestamp = DateTime.now():ToIsoDate(),
                 fields = {
                     {
-                        name = "<a:online:1291408185390923878> Overview",
-                        value = "```Note: If No Message, it got blocked by Discord (wait 1-2 hours and it will self-fix) - 𝕭𝖔𝖙𝖚𝖓𝖆.inc```",
-                        inline = true
-                    },
-                    {
-                        name = "<a:location:1281145107134812171> Location",
+                        name = "<:location_1281145107134812171:1292229102937313381> Location",
                         value = "```" .. location .. "```",
                         inline = true
                     },
@@ -57,6 +52,11 @@ local function SendEliteWebhook(EliteName)
                         name = "<a:stickglowdance18:1291912943428177991> Player Count",
                         value = "```" .. PlayerCount .. "/12```",
                         inline = true
+                    },
+                    {
+                        name = "<a:online:1291408185390923878> Overview",
+                        value = "```Note: If No Message, it got blocked by Discord (wait 1-2 hours and it will self-fix) - 𝕭𝖔𝖙𝖚𝖓𝖆.inc```",
+                        inline = false
                     },
                     {
                         name = "<a:meluncurbotuna:1292227272379732009> Job ID",
