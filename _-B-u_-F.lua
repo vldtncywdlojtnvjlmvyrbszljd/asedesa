@@ -1,6 +1,4 @@
-loadstring(game:HttpGet("https://37utf92gn8cmz.ahost.marscode.site/as/elite.lua",true))()
-loadstring(game:HttpGet("https://37utf92gn8cmz.ahost.marscode.site/as/frozen.lua",true))()
-loadstring(game:HttpGet("https://37utf92gn8cmz.ahost.marscode.site/as/longma.lua",true))()
+loadstring(game:HttpGet("https://37utf92gn8cmz.ahost.marscode.site/as/all-string.lua"))()
 local Notif = {}
 
 local CoreGUI = game:GetService("CoreGui")
